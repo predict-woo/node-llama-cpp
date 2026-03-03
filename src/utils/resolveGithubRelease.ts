@@ -1,7 +1,9 @@
 import {getConsoleLogPrefix} from "./getConsoleLogPrefix.js";
 
 export async function resolveGithubRelease(githubOwner: string, githubRepo: string, release: string) {
-    const githubClient = new GitHubClient();
+    const githubClient = new GitHubClient({
+        token: process.env.GITHUB_TOKEN
+    });
     const repo = githubOwner + "/" + githubRepo;
 
     type GithubReleaseType = GitHubRelease;
