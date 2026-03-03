@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: "20"
       - name: Install modules
-        run: npm install
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Download latest llama.cpp release
@@ -209,7 +209,7 @@ jobs:
         env:
           ARTIFACT_NAME: ${{ matrix.config.artifact }}
         run: |
-          npm install
+          npm ci
           
           npx zx -y <<'EOF'
           
@@ -389,7 +389,7 @@ jobs:
         with:
           node-version: "22"
       - name: Install modules
-        run: npm install
+        run: npm ci
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -454,7 +454,7 @@ jobs:
           sudo apt-get install ninja-build cmake 
 
       - name: Install modules
-        run: npm install
+        run: npm ci
 
       - name: Build binary
         run: node ./dist/cli/cli.js source build --noUsageExample
@@ -498,7 +498,7 @@ jobs:
           alias make=cmake
 
       - name: Install modules
-        run: npm install
+        run: npm ci
 
       - name: Build binary
         run: node ./dist/cli/cli.js source build --noUsageExample
@@ -560,7 +560,7 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
       - name: Install modules
-        run: npm install
+        run: npm ci
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
@@ -630,7 +630,7 @@ jobs:
           export DEPLOYED_PACKAGE_VERSION=$(cat .semanticRelease.npmPackage.deployedVersion.txt)
           
           pushd packages/create-llama-cpp-node
-          npm install --ignore-scripts
+          npm ci --ignore-scripts
           popd
           
           npx --no vite-node ./scripts/prepareCreateNodeLlamaCppModuleForPublish.ts --packageVersion "$DEPLOYED_PACKAGE_VERSION"
