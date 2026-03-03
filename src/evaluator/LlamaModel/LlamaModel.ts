@@ -11,7 +11,7 @@ import {readGgufFileInfo} from "../../gguf/readGgufFileInfo.js";
 import {GgufInsights} from "../../gguf/insights/GgufInsights.js";
 import {getConsoleLogPrefix} from "../../utils/getConsoleLogPrefix.js";
 import {Writable} from "../../utils/utilTypes.js";
-import {getReadablePath} from "../../utils/getReadablePath.js";
+import {getReadablePath} from "../../cli/utils/getReadablePath.js";
 import {LlamaContextOptions} from "../LlamaContext/types.js";
 import {LlamaContext} from "../LlamaContext/LlamaContext.js";
 import {LlamaEmbeddingContext, LlamaEmbeddingContextOptions} from "../LlamaEmbeddingContext.js";

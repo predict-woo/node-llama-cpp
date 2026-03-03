@@ -4,7 +4,7 @@ import {getDefaultContextBatchSize, getDefaultContextSequences} from "../../eval
 import {GgufFileInfo} from "../types/GgufFileInfoTypes.js";
 import {GgufTensorInfo} from "../types/GgufTensorInfoTypes.js";
 import {GgufArchitectureType} from "../types/GgufMetadataTypes.js";
-import {getReadablePath} from "../../utils/getReadablePath.js";
+import {getReadablePath} from "../../cli/utils/getReadablePath.js";
 import {padSafeContextSize} from "../../evaluator/LlamaContext/utils/padSafeContextSize.js";
 import {GgufInsightsConfigurationResolver} from "./GgufInsightsConfigurationResolver.js";
 import {GgufInsightsTokens} from "./GgufInsightsTokens.js";
