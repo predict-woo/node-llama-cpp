@@ -6,7 +6,6 @@ import {NoBinaryFoundError} from "./bindings/utils/NoBinaryFoundError.js";
 import {
     type LlamaGpuType, type LlamaNuma, LlamaLogLevel, LlamaLogLevelGreaterThan, LlamaLogLevelGreaterThanOrEqual, LlamaVocabularyType
 } from "./bindings/types.js";
-import {resolveModelFile, type ResolveModelFileOptions} from "./utils/resolveModelFile.js";
 import {LlamaModel, LlamaModelInfillTokens, type LlamaModelOptions, LlamaModelTokens} from "./evaluator/LlamaModel/LlamaModel.js";
 import {TokenAttributes} from "./evaluator/LlamaModel/utils/TokenAttributes.js";
 import {LlamaGrammar, type LlamaGrammarOptions} from "./evaluator/LlamaGrammar.js";
@@ -87,10 +86,6 @@ import {readGgufFileInfo} from "./gguf/readGgufFileInfo.js";
 import {GgufInsights, type GgufInsightsResourceRequirements} from "./gguf/insights/GgufInsights.js";
 import {GgufInsightsConfigurationResolver} from "./gguf/insights/GgufInsightsConfigurationResolver.js";
 import {GgufInsightsTokens} from "./gguf/insights/GgufInsightsTokens.js";
-import {
-    createModelDownloader, ModelDownloader, type ModelDownloaderOptions, combineModelDownloaders, CombinedModelDownloader,
-    type CombinedModelDownloaderOptions
-} from "./utils/createModelDownloader.js";
 import {jsonDumps} from "./chatWrappers/utils/jsonDumps.js";
 import {experimentalChunkDocument} from "./evaluator/utils/chunkDocument.js";
 
@@ -116,7 +111,6 @@ import {
     type GgufMetadataBloom, type GgufMetadataFalcon, type GgufMetadataMamba, isGgufMetadataOfArchitectureType
 } from "./gguf/types/GgufMetadataTypes.js";
 import {GgmlType, type GgufTensorInfo} from "./gguf/types/GgufTensorInfoTypes.js";
-import {type ModelFileAccessTokens} from "./utils/modelFileAccessTokens.js";
 import {type OverridesObject} from "./utils/OverridesObject.js";
 import type {LlamaClasses} from "./utils/getLlamaClasses.js";
 import type {ChatHistoryFunctionCallMessageTemplate} from "./chatWrappers/generic/utils/chatHistoryFunctionCallMessageTemplate.js";
@@ -134,8 +128,6 @@ export {
     type LlamaClasses,
     LlamaLogLevel,
     NoBinaryFoundError,
-    resolveModelFile,
-    type ResolveModelFileOptions,
     LlamaModel,
     LlamaModelTokens,
     LlamaModelInfillTokens,
@@ -324,13 +316,6 @@ export {
     type GgufInsightsResourceRequirements,
     GgufInsightsTokens,
     GgufInsightsConfigurationResolver,
-    createModelDownloader,
-    ModelDownloader,
-    type ModelDownloaderOptions,
-    type ModelFileAccessTokens,
-    combineModelDownloaders,
-    CombinedModelDownloader,
-    type CombinedModelDownloaderOptions,
     jsonDumps,
     type OverridesObject,
     experimentalChunkDocument

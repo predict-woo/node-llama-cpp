@@ -1,0 +1,13 @@
+Task 1 Evidence - CLI Deletion
+Worktree: /Users/andyye/dev/node-llama-cpp-dep-pruning
+
+Commands executed:
+1) rm -rf src/cli && rm src/commands.ts
+2) test ! -d src/cli && echo "CLI deleted" || echo "FAIL"
+3) test ! -f src/commands.ts && echo "commands.ts deleted" || echo "FAIL"
+4) test ! -d src/cli && test ! -f src/commands.ts && echo PASS
+
+Verification output:
+CLI deleted
+commands.ts deleted
+PASS
