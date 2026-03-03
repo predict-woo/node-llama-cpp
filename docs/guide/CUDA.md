@@ -1,18 +1,18 @@
 ---
 outline: [2, 3]
-description: CUDA support in node-llama-cpp
+description: CUDA support in llama-cpp-node
 ---
 # CUDA Support
 > CUDA is a parallel computing platform and API created by NVIDIA for NVIDIA GPUs
 
-`node-llama-cpp` ships with pre-built binaries with CUDA support for Windows and Linux,
+`llama-cpp-node` ships with pre-built binaries with CUDA support for Windows and Linux,
 and these are automatically used when CUDA is detected on your machine.
 
-To use `node-llama-cpp`'s CUDA support with your NVIDIA GPU,
+To use `llama-cpp-node`'s CUDA support with your NVIDIA GPU,
 make sure you have [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) 13.1 or higher installed on your machine.
 
 If the pre-built binaries don't work with your CUDA installation,
-`node-llama-cpp` will automatically download a release of `llama.cpp` and build it from source with CUDA support.
+`llama-cpp-node` will automatically download a release of `llama.cpp` and build it from source with CUDA support.
 Building from source with CUDA support is slow and can take up to an hour.
 
 The pre-built binaries are compiled with CUDA Toolkits 12.4 and 13.1,
@@ -23,7 +23,7 @@ consider updating it to avoid having to wait the long build time.
 ## Testing CUDA Support
 To check whether the CUDA support works on your machine, run this command:
 ```shell
-npx --no node-llama-cpp inspect gpu
+npx --no llama-cpp-node inspect gpu
 ```
 
 You should see an output like this:
@@ -47,13 +47,13 @@ If you see `CUDA used VRAM` in the output, it means that CUDA support is working
 * [`cmake-js` dependencies](https://github.com/cmake-js/cmake-js#:~:text=%5Bstring%5D-,Requirements%3A,-CMake)
 * [CMake](https://cmake.org/download/) 3.26 or higher (optional, recommended if you have build issues)
 
-## Manually Building `node-llama-cpp` With CUDA Support {#building}
+## Manually Building `llama-cpp-node` With CUDA Support {#building}
 Run this command inside of your project:
 ```shell
-npx --no node-llama-cpp source download --gpu cuda
+npx --no llama-cpp-node source download --gpu cuda
 ```
 
-> If `cmake` is not installed on your machine, `node-llama-cpp` will automatically download `cmake` to an internal directory and try to use it to build `llama.cpp` from source.
+> If `cmake` is not installed on your machine, `llama-cpp-node` will automatically download `cmake` to an internal directory and try to use it to build `llama.cpp` from source.
 
 > If you see the message `CUDA not found` during the build process,
 > it means that CUDA Toolkit is not installed on your machine or that it is not detected by the build process.
@@ -77,7 +77,7 @@ const cudaCmakeOptionsTable = data.cudaCmakeOptionsTable;
 
 :::
 
-To build `node-llama-cpp` with any of these options, set an environment variable of an option prefixed with `NODE_LLAMA_CPP_CMAKE_OPTION_`.
+To build `llama-cpp-node` with any of these options, set an environment variable of an option prefixed with `NODE_LLAMA_CPP_CMAKE_OPTION_`.
 
 ### Fix the `Failed to detect a default CUDA architecture` Build Error
 To fix this issue you have to set the `CUDACXX` environment variable to the path of the `nvcc` compiler,
@@ -128,30 +128,30 @@ $env:NODE_LLAMA_CPP_CMAKE_OPTION_CMAKE_GENERATOR_TOOLSET=$env:CUDA_PATH
 Then run the build command again to check whether setting the `CMAKE_GENERATOR_TOOLSET` cmake option fixed the issue.
 
 ### Fix the `forward compatibility was attempted on non supported HW` Error {#fix-cuda-forward-compatibility}
-This error usually happens when the CUDA version you have installed on your machine is older than the CUDA version used in the prebuilt binaries supplied by `node-llama-cpp`.
+This error usually happens when the CUDA version you have installed on your machine is older than the CUDA version used in the prebuilt binaries supplied by `llama-cpp-node`.
 
-To resolve this issue, you can either [update your CUDA installation](https://developer.nvidia.com/cuda-downloads) to the latest version (recommended) or [build `node-llama-cpp` on your machine](#building) against the CUDA version you have installed.
+To resolve this issue, you can either [update your CUDA installation](https://developer.nvidia.com/cuda-downloads) to the latest version (recommended) or [build `llama-cpp-node` on your machine](#building) against the CUDA version you have installed.
 
 ### Fix the `Binary GPU type mismatch. Expected: cuda, got: false` Error {#fix-cuda-gpu-type-mismatch}
 This error usually happens when you have multiple conflicting CUDA versions installed on your machine.
 
 To fix it, uninstall older CUDA versions and restart your machine (important).
 
-:::: details Check which CUDA libraries are picked up by `node-llama-cpp`'s prebuilt binaries on your machine
+:::: details Check which CUDA libraries are picked up by `llama-cpp-node`'s prebuilt binaries on your machine
 
 Run this command inside of your project:
 
 ::: code-group
 ```shell [Linux]
-ldd ./node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so
+ldd ./node_modules/@llama-cpp-node/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so
 ```
 
 ```cmd [Windows (cmd)]
-"C:\Program Files\Git\usr\bin\ldd.exe" node_modules\@node-llama-cpp\win-x64-cuda\bins\win-x64-cuda\ggml-cuda.dll
+"C:\Program Files\Git\usr\bin\ldd.exe" node_modules\@llama-cpp-node\win-x64-cuda\bins\win-x64-cuda\ggml-cuda.dll
 ```
 
 ```cmd [Windows (PowerShell)]
-& "C:\Program Files\Git\usr\bin\ldd.exe" node_modules\@node-llama-cpp\win-x64-cuda\bins\win-x64-cuda\ggml-cuda.dll
+& "C:\Program Files\Git\usr\bin\ldd.exe" node_modules\@llama-cpp-node\win-x64-cuda\bins\win-x64-cuda\ggml-cuda.dll
 ```
 :::
 
@@ -163,13 +163,13 @@ This error usually happens when the NVIDIA drivers installed on your machine are
 To fix it, update your NVIDIA drivers to the latest version from the [NVIDIA Driver Downloads](https://www.nvidia.com/en-us/drivers/) page.
 
 
-## Using `node-llama-cpp` With CUDA
+## Using `llama-cpp-node` With CUDA
 It's recommended to use [`getLlama`](../api/functions/getLlama) without specifying a GPU type,
 so it'll detect the available GPU types and use the best one automatically.
 
 To do this, just use [`getLlama`](../api/functions/getLlama) without any parameters:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 // ---cut---
 const llama = await getLlama();
 console.log("GPU type:", llama.gpu);
@@ -177,7 +177,7 @@ console.log("GPU type:", llama.gpu);
 
 To force it to use CUDA, you can use the [`gpu`](../api/type-aliases/LlamaOptions#gpu) option:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 // ---cut---
 const llama = await getLlama({
     gpu: "cuda"
@@ -185,13 +185,13 @@ const llama = await getLlama({
 console.log("GPU type:", llama.gpu);
 ```
 
-By default, `node-llama-cpp` will offload as many layers of the model to the GPU as it can fit in the VRAM.
+By default, `llama-cpp-node` will offload as many layers of the model to the GPU as it can fit in the VRAM.
 
 To force it to offload a specific number of layers, you can use the [`gpuLayers`](../api/type-aliases/LlamaModelOptions.md#gpulayers) option:
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const modelPath = path.join(__dirname, "my-model.gguf")

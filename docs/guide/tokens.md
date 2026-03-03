@@ -1,11 +1,11 @@
 ---
-description: The basics of working with tokens in node-llama-cpp
+description: The basics of working with tokens in llama-cpp-node
 ---
 # Using Tokens
-`node-llama-cpp` provides you with a high-level API that abstracts dealing with tokens,
+`llama-cpp-node` provides you with a high-level API that abstracts dealing with tokens,
 so you may not even encounter a scenario where you have to deal with tokens directly.
 
-However, `node-llama-cpp` provides you flexibility to work with tokens directly if you need to.
+However, `llama-cpp-node` provides you flexibility to work with tokens directly if you need to.
 
 ## Background
 The way we interact with a model is by using tokens.
@@ -20,7 +20,7 @@ When we detokenize tokens, we get the original text back.
 
 Let's see what that tokenizing text looks like, using [this model](https://huggingface.co/mradermacher/Meta-Llama-3-8B-Instruct-GGUF/blob/main/Meta-Llama-3-8B-Instruct.Q4_K_M.gguf):
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const llama = await getLlama();
 const model = await llama.loadModel({
@@ -47,7 +47,7 @@ When you create a context from a model (using [`.createContext(...)`](../api/cla
 that context has a [context size](../api/type-aliases/LlamaEmbeddingContextOptions#contextsize), which is the number of tokens that it can hold.
 
 The maximum context size depends on the context size used during the training of the model.
-`node-llama-cpp` attempts to use the maximum context size possible by default.
+`llama-cpp-node` attempts to use the maximum context size possible by default.
 
 To generate output, we put tokens into the context let the model generate completion for it.
 The completion is also an array of tokens, which we can detokenize to get the generated text.
@@ -68,7 +68,7 @@ This token is a BOS (Beginning Of Sequence) token that is supposed to mark the b
 
 To tokenize it as a special token, we can do this:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const llama = await getLlama();
 const model = await llama.loadModel({
@@ -84,7 +84,7 @@ If we pass this token to the model, that model will know that this is the beginn
 
 Let's see what happens when we tokenize this same text without special tokens mode:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const llama = await getLlama();
 const model = await llama.loadModel({
@@ -109,7 +109,7 @@ Common special tokens can be used without having to know their text representati
 
 For example, this is how you can use the BOS (Beginning Of Sequence) token of a model without knowing its text representation:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const llama = await getLlama();
 const model = await llama.loadModel({
@@ -125,7 +125,7 @@ You can track the usage of tokens by a context sequence using the [`.tokenMeter`
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

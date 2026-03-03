@@ -1,9 +1,9 @@
 ---
 outline: [2, 4]
-description: Using node-llama-cpp in Docker
+description: Using llama-cpp-node in Docker
 ---
-# Using `node-llama-cpp` in Docker
-When using `node-llama-cpp` in a docker image to run it with [Docker](https://www.docker.com) or [Podman](https://podman.io), you will most likely want to use it together with a GPU for fast inference.
+# Using `llama-cpp-node` in Docker
+When using `llama-cpp-node` in a docker image to run it with [Docker](https://www.docker.com) or [Podman](https://podman.io), you will most likely want to use it together with a GPU for fast inference.
 
 For that, you'll have to:
 1. Configure support for your GPU on the host machine
@@ -136,10 +136,10 @@ services:
 When using the CLI, you can test the GPU support by running this command
 ::: code-group
 ```shell[<code>docker</code> CLI]
-docker run --rm -it --gpus=all my-image:tag npx -y node-llama-cpp inspect gpu
+docker run --rm -it --gpus=all my-image:tag npx -y llama-cpp-node inspect gpu
 ```
 ```shell[<code>podman</code> CLI]
-podman run --rm -it --gpus=all my-image:tag npx -y node-llama-cpp inspect gpu
+podman run --rm -it --gpus=all my-image:tag npx -y llama-cpp-node inspect gpu
 ```
 :::
 

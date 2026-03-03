@@ -6,7 +6,7 @@ import {getLlamaFunctionName, LlamaOptions} from "../getLlama.js";
 export function getExampleUsageCodeOfGetLlama(getLlamaOptions: LlamaOptions | "lastBuild" | undefined, prefix: string = "", wrapWithSeparators: boolean = true) {
     let res = prefix + [
         chalk.magenta.italic("import "), chalk.whiteBright("{"), chalk.yellow(getLlamaFunctionName), chalk.whiteBright("} "),
-        chalk.magenta.italic("from "), chalk.green("\"node-llama-cpp\""), chalk.whiteBright(";"),
+        chalk.magenta.italic("from "), chalk.green("\"llama-cpp-node\""), chalk.whiteBright(";"),
         "\n\n",
         chalk.magenta.italic("const "), chalk.whiteBright("llama "), chalk.whiteBright("= "), chalk.magenta.italic("await "), chalk.yellow(getLlamaFunctionName), chalk.whiteBright("("),
         getLlamaOptions === undefined ? "" : prettyPrintObject(getLlamaOptions),

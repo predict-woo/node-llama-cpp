@@ -1,11 +1,11 @@
 ---
 outline: [2, 3]
-description: Vulkan support in node-llama-cpp
+description: Vulkan support in llama-cpp-node
 ---
 # Using Vulkan
 > Vulkan is a low-overhead, cross-platform 3D graphics and computing API
 
-`node-llama-cpp` ships with pre-built binaries with Vulkan support for Windows and Linux, and these are automatically used when Vulkan support is detected on your machine.
+`llama-cpp-node` ships with pre-built binaries with Vulkan support for Windows and Linux, and these are automatically used when Vulkan support is detected on your machine.
 
 **Windows:** Vulkan drivers are usually provided together with your GPU drivers, so most chances are that you don't have to install anything.
 
@@ -14,7 +14,7 @@ description: Vulkan support in node-llama-cpp
 ## Testing Vulkan Support
 To check whether the Vulkan support works on your machine, run this command:
 ```shell
-npx --no node-llama-cpp inspect gpu
+npx --no llama-cpp-node inspect gpu
 ```
 
 You should see an output like this:
@@ -32,7 +32,7 @@ You should see an output like this:
 
 If you see `Vulkan used VRAM` in the output, it means that Vulkan support is working on your machine.
 
-## Building `node-llama-cpp` With Vulkan Support {#building}
+## Building `llama-cpp-node` With Vulkan Support {#building}
 ### Prerequisites
 * [`cmake-js` dependencies](https://github.com/cmake-js/cmake-js#:~:text=%5Bstring%5D-,Requirements%3A,-CMake)
 * [CMake](https://cmake.org/download/) 3.26 or higher (optional, recommended if you have build issues)
@@ -80,21 +80,21 @@ Manually building from source using the [`source download`](../cli/source/downlo
 
 To manually build from source, run this command inside of your project:
 ```shell
-npx --no node-llama-cpp source download --gpu vulkan
+npx --no llama-cpp-node source download --gpu vulkan
 ```
 
-> If `cmake` is not installed on your machine, `node-llama-cpp` will automatically download `cmake` to an internal directory and try to use it to build `llama.cpp` from source.
+> If `cmake` is not installed on your machine, `llama-cpp-node` will automatically download `cmake` to an internal directory and try to use it to build `llama.cpp` from source.
 
 > If you see the message `Vulkan not found` during the build process,
 > it means that the Vulkan SDK is not installed on your machine or that it is not detected by the build process.
 
-## Using `node-llama-cpp` With Vulkan
+## Using `llama-cpp-node` With Vulkan
 It's recommended to use [`getLlama`](../api/functions/getLlama) without specifying a GPU type,
 so it'll detect the available GPU types and use the best one automatically.
 
 To do this, just use [`getLlama`](../api/functions/getLlama) without any parameters:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 // ---cut---
 const llama = await getLlama();
 console.log("GPU type:", llama.gpu);
@@ -102,7 +102,7 @@ console.log("GPU type:", llama.gpu);
 
 To force it to use Vulkan, you can use the [`gpu`](../api/type-aliases/LlamaOptions#gpu) option:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 // ---cut---
 const llama = await getLlama({
     gpu: "vulkan"
@@ -110,13 +110,13 @@ const llama = await getLlama({
 console.log("GPU type:", llama.gpu);
 ```
 
-By default, `node-llama-cpp` will offload as many layers of the model to the GPU as it can fit in the VRAM.
+By default, `llama-cpp-node` will offload as many layers of the model to the GPU as it can fit in the VRAM.
 
 To force it to offload a specific number of layers, you can use the [`gpuLayers`](../api/type-aliases/LlamaModelOptions.md#gpulayers) option:
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const modelPath = path.join(__dirname, "my-model.gguf")
@@ -138,7 +138,7 @@ Attempting to offload more layers to the GPU than the available VRAM can fit wil
 
 On Linux, you can monitor GPU usage with this command:
 ```shell
-watch -d "npx --no node-llama-cpp inspect gpu"
+watch -d "npx --no llama-cpp-node inspect gpu"
 ```
 
 ## Vulkan Caveats
@@ -152,7 +152,7 @@ so you may not encounter this issue at all.
 
 If you'd like to make sure Vulkan isn't used in your project, you can do this:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 // ---cut---
 const llama = await getLlama({
     gpu: {

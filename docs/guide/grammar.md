@@ -24,14 +24,14 @@ so it's recommended to use it together with `maxTokens` set to the context size 
 :::
 
 ## Using a Builtin Grammar {#builtin-grammar}
-The [`llama.getGrammarFor("<format>")`](../api/classes/Llama.md#getgrammarfor) method reads a GBNF grammar file that's originally provided by `llama.cpp` and is included inside of `node-llama-cpp`.
+The [`llama.getGrammarFor("<format>")`](../api/classes/Llama.md#getgrammarfor) method reads a GBNF grammar file that's originally provided by `llama.cpp` and is included inside of `llama-cpp-node`.
 
 You can see the full list of supported grammar files [here](https://github.com/ggml-org/llama.cpp/tree/master/grammars).
 
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -85,7 +85,7 @@ To see what subset of the JSON schema spec is supported, see the [`GbnfJsonSchem
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -181,7 +181,7 @@ To use your custom grammar file, load it via the [`llama.createGrammar(...)`](..
 import {fileURLToPath} from "url";
 import path from "path";
 import fs from "fs/promises";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const myGrammar = await fs.readFile(path.join(__dirname, "my-json-grammar.gbnf"), "utf8");
@@ -235,7 +235,7 @@ import {fileURLToPath} from "url";
 import path from "path";
 import {
     getLlama, LlamaChatSession, defineChatSessionFunction
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)

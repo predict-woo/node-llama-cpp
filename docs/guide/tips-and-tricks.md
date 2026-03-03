@@ -1,5 +1,5 @@
 ---
-description: Tips and tricks for using node-llama-cpp
+description: Tips and tricks for using llama-cpp-node
 ---
 # Tips and Tricks
 ## Flash Attention {#flash-attention}
@@ -20,7 +20,7 @@ To enable flash attention on the model level, you can enable the [`defaultContex
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -41,7 +41,7 @@ since it expected the context to use much more VRAM than it actually does due to
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -84,7 +84,7 @@ sudo apt install libgomp1
 
 After installing OpenMP, [build from source](./building-from-source.md) and the OpenMP library will be automatically be used upon detection:
 ```shell
-npx --no node-llama-cpp source download
+npx --no llama-cpp-node source download
 ```
 
-Now, just use `node-llama-cpp` as you normally would.
+Now, just use `llama-cpp-node` as you normally would.

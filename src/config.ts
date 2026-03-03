@@ -23,8 +23,8 @@ export const projectTemplatesDirectory = path.join(__dirname, "..", "templates")
 export const packedProjectTemplatesDirectory = path.join(projectTemplatesDirectory, "packed");
 export const llamaCppDirectory = path.join(llamaDirectory, "llama.cpp");
 export const llamaCppGrammarsDirectory = path.join(llamaDirectory, "llama.cpp", "grammars");
-export const tempDownloadDirectory = path.join(os.tmpdir(), "node-llama-cpp", nanoid());
-export const cliHomedirDirectory = path.join(os.homedir(), ".node-llama-cpp");
+export const tempDownloadDirectory = path.join(os.tmpdir(), "llama-cpp-node", nanoid());
+export const cliHomedirDirectory = path.join(os.homedir(), ".llama-cpp-node");
 export const chatCommandHistoryFilePath = path.join(cliHomedirDirectory, ".chat_repl_history");
 export const cliModelsDirectory = path.join(cliHomedirDirectory, "models");
 export const lastBuildInfoJsonPath = path.join(llamaDirectory, "lastBuild.json");
@@ -86,7 +86,7 @@ export const customCmakeOptionsEnvVarPrefix = "NODE_LLAMA_CPP_CMAKE_OPTION_";
 export const defaultChatSystemPrompt = "You are a helpful, respectful and honest assistant. Always answer as helpfully as possible.\n" +
     "If a question does not make any sense, or is not factually coherent, explain why instead of answering something incorrectly. " +
     "If you don't know the answer to a question, don't share false information.";
-export const cliBinName = "node-llama-cpp";
+export const cliBinName = "llama-cpp-node";
 export const npxRunPrefix = "npx --no ";
 
 // No need for that at the moment.
@@ -95,7 +95,7 @@ export const npxRunPrefix = "npx --no ";
 // The submodules of the repo are not being used for the compilation for the supported backends, so there's no need to clone them.
 export const enableRecursiveClone = false;
 
-const documentationUrl = "https://node-llama-cpp.withcat.ai";
+const documentationUrl = "https://llama-cpp-node.withcat.ai";
 const documentationCliUrl = documentationUrl + "/cli";
 export const documentationPageUrls = {
     CUDA: documentationUrl + "/guide/CUDA",

@@ -56,7 +56,7 @@ For example, to chat with a LLama 3 Instruct model, you can use [Llama3ChatWrapp
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, Llama3ChatWrapper} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, Llama3ChatWrapper} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -93,7 +93,7 @@ A simple way to create your own custom chat wrapper is to use [`TemplateChatWrap
 
 Example usage:
 ```typescript
-import {TemplateChatWrapper} from "node-llama-cpp";
+import {TemplateChatWrapper} from "llama-cpp-node";
 
 const chatWrapper = new TemplateChatWrapper({
     template: "{{systemPrompt}}\n{{history}}model: {{completion}}\nuser: ",
@@ -121,7 +121,7 @@ If you'd like to create your own chat wrapper, it's significantly easier to [wri
 :::
 
 ```typescript
-import {JinjaTemplateChatWrapper} from "node-llama-cpp";
+import {JinjaTemplateChatWrapper} from "llama-cpp-node";
 
 const chatWrapper = new JinjaTemplateChatWrapper({
     template: "<Jinja template here>",
@@ -161,7 +161,7 @@ so the model can continue generating completion for an existing response. This i
 
 When the chat history gets longer than the sequence's context size, we have to remove the oldest tokens from the context state to make room for new tokens to be generated.
 
-`node-llama-cpp` has a smart mechanism to handle context shifts on the chat level, so the oldest messages are truncated (from their beginning) or removed from the context state, while keeping the system prompt in place to ensure the model follows the guidelines you set for it.
+`llama-cpp-node` has a smart mechanism to handle context shifts on the chat level, so the oldest messages are truncated (from their beginning) or removed from the context state, while keeping the system prompt in place to ensure the model follows the guidelines you set for it.
 
 :::
 
@@ -172,7 +172,7 @@ import {
     getLlama, LlamaChatSession, ChatWrapper,
     ChatWrapperSettings, ChatWrapperGenerateContextStateOptions,
     ChatWrapperGeneratedContextState, LlamaText
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -262,7 +262,7 @@ and configure the default options for each of the builtin chat wrappers it may r
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, resolveChatWrapper} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, resolveChatWrapper} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

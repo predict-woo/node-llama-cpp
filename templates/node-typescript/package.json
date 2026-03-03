@@ -1,5 +1,5 @@
 {
-  "name": "node-llama-cpp-project",
+  "name": "llama-cpp-node-project",
   "private": true,
   "version": "0.0.0",
   "main": "./dist/index.js",
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "_postinstall": "npm run models:pull",
-    "models:pull": "node-llama-cpp pull --dir ./models \"{{modelUriOrUrl|escape|escape}}\"",
+    "models:pull": "llama-cpp-node pull --dir ./models \"{{modelUriOrUrl|escape|escape}}\"",
     "start": "vite-node ./src/index.ts",
     "start:build": "node ./dist/index.ts",
     "prebuild": "rimraf ./dist ./tsconfig.tsbuildinfo",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "chalk": "^5.6.2",
-    "node-llama-cpp": "file:../.."
+    "llama-cpp-node": "file:../.."
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",

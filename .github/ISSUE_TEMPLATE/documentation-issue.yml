@@ -9,8 +9,8 @@ body:
   - type: markdown
     attributes:
       value: >-
-        Have a question? This is the `node-llama-cpp` issue tracker – and is not the right place for general support or questions.
-        Instead, use [`node-llama-cpp` GitHub Discussions](https://github.com/withcatai/node-llama-cpp/discussions) to get support or ask questions.
+        Have a question? This is the `llama-cpp-node` issue tracker – and is not the right place for general support or questions.
+        Instead, use [`llama-cpp-node` GitHub Discussions](https://github.com/withcatai/node-llama-cpp/discussions) to get support or ask questions.
   - type: textarea
     id: details
     attributes:

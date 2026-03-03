@@ -1,9 +1,9 @@
 ---
 outline: [2, 3]
-description: Objects lifecycle in node-llama-cpp
+description: Objects lifecycle in llama-cpp-node
 ---
 # Objects Lifecycle
-Every object in `node-llama-cpp` has a ` .dispose()` function you can call to free up its resources.
+Every object in `llama-cpp-node` has a ` .dispose()` function you can call to free up its resources.
 
 Calling the `.dispose()` function on an object also disposes all of its dependant objects.
 
@@ -11,7 +11,7 @@ For example, calling [`.dispose()`](../api/classes/LlamaModel.md#dispose) on a m
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -36,7 +36,7 @@ To automatically dispose an object when it goes out of scope, you can use [`awai
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, LlamaContext} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, LlamaContext} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -72,12 +72,12 @@ so it's best to create a single instance and reuse it throughout your entire app
 You can do so by creating a `llama.ts` file and exporting the instance from there:
 ::: code-group
 ```typescript [<code>llama.ts</code>]
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 export const llama = await getLlama();// [!code highlight]
 ```
 ```typescript [<code>index.ts</code>]
 // @filename: llama.ts
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 export const llama = await getLlama();
 
 // @filename: index.ts
@@ -93,7 +93,7 @@ const model = await llama.loadModel({modelPath});
 ```
 ```typescript [<code>vram.ts</code>]
 // @filename: llama.ts
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 export const llama = await getLlama();
 
 // @filename: memory.ts

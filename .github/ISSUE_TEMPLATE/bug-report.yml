@@ -9,8 +9,8 @@ body:
   - type: markdown
     attributes:
       value: |-
-        Have a question? This is the `node-llama-cpp` issue tracker – and is not the right place for general support or questions.
-        Instead, use [`node-llama-cpp` GitHub Discussions](https://github.com/withcatai/node-llama-cpp/discussions) to get support or ask questions.
+        Have a question? This is the `llama-cpp-node` issue tracker – and is not the right place for general support or questions.
+        Instead, use [`llama-cpp-node` GitHub Discussions](https://github.com/withcatai/node-llama-cpp/discussions) to get support or ask questions.
   - type: input
     id: description
     attributes:
@@ -39,7 +39,7 @@ body:
     attributes:
       label: Steps to reproduce
       description: |-
-        Your bug can be investigated much faster if your code can be run without any dependencies other than `node-llama-cpp`.
+        Your bug can be investigated much faster if your code can be run without any dependencies other than `llama-cpp-node`.
         Issues without reproduction steps or code examples may be closed as not actionable.
         Please try to provide a Minimal, Complete, and Verifiable example ([link](http://stackoverflow.com/help/mcve)), including a link to the model file you used if possible.
         Also, please enable enable debug logs by using `getLlama({debug: true})` to get more information.
@@ -53,7 +53,7 @@ body:
     attributes:
       label: My Environment
       description: |-
-        Please include the result of the command `npx --yes node-llama-cpp inspect gpu`.
+        Please include the result of the command `npx --yes llama-cpp-node inspect gpu`.
         Please also add any other relevant dependencies to this table at the end. For example: Electron, Bun, Webpack.
       value: |
         | Dependency               | Version             |
@@ -62,11 +62,11 @@ body:
         | CPU                      | Intel i9 / Apple M1 |
         | Node.js version          | x.y.zzz             |
         | Typescript version       | x.y.zzz             |
-        | `node-llama-cpp` version | x.y.zzz             |
+        | `llama-cpp-node` version | x.y.zzz             |
         
-        `npx --yes node-llama-cpp inspect gpu` output:
+        `npx --yes llama-cpp-node inspect gpu` output:
         ```
-        Result of running `npx --yes node-llama-cpp inspect gpu`
+        Result of running `npx --yes llama-cpp-node inspect gpu`
         ```
     validations:
       required: true

@@ -81,7 +81,7 @@ async function clearPackedTemplates() {
 function transformPackedItem(item: PackagedFileEntry) {
     if (item.path.length === 1 && item.path[0] === "package.json") {
         const packageJson = JSON.parse(item.content);
-        const moduleName = "node-llama-cpp";
+        const moduleName = "llama-cpp-node";
 
         if (packageJson.dependencies?.[moduleName])
             packageJson.dependencies[moduleName] =

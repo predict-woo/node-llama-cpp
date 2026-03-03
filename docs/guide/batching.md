@@ -1,5 +1,5 @@
 ---
-description: Using batching in node-llama-cpp
+description: Using batching in llama-cpp-node
 ---
 # Using Batching
 > Batching is the process of grouping multiple input sequences together to be processed simultaneously,
@@ -15,7 +15,7 @@ Here's an example of how to process 2 inputs in parallel, utilizing batching:
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const modelPath = path.join(__dirname, "my-model.gguf")

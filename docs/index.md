@@ -1,11 +1,11 @@
 ---
 layout: home
 
-title: node-llama-cpp
+title: llama-cpp-node
 titleTemplate: Run AI models locally on your machine
 
 hero:
-  name: "node-llama-cpp"
+  name: "llama-cpp-node"
   text: "Run AI models locally on your machine"
   tagline: node.js bindings for llama.cpp, and much more
   actions:
@@ -17,7 +17,7 @@ hero:
       link: /api/functions/getLlama
   image:
     src: /logo.jpg
-    alt: node-llama-cpp Logo
+    alt: llama-cpp-node Logo
     width: 320
     height: 320
 
@@ -55,14 +55,14 @@ import HomePage from "../.vitepress/components/HomePage/HomePage.vue";
 <template v-slot:chat-command>
 
 ```shell
-npx -y node-llama-cpp chat
+npx -y llama-cpp-node chat
 ```
 
 </template>
 <template v-slot:inspect-command>
 
 ```shell
-npx -y node-llama-cpp inspect gpu
+npx -y llama-cpp-node inspect gpu
 ```
 
 </template>
@@ -95,7 +95,7 @@ npx -y node-llama-cpp inspect gpu
 * [TypeScript type-safety](./api/functions/getLlama.md)
 * [LoRA](./api/type-aliases/LlamaContextOptions.md#lora)
 * [Remote GGUF reader](./api/functions/readGgufFileInfo.md)
-* [User input safety](./guide/llama-text.md#input-safety-in-node-llama-cpp)
+* [User input safety](./guide/llama-text.md#input-safety-in-llama-cpp-node)
 * [Token prediction](./guide/token-prediction.md)
 * [Reranking](./guide/embedding.md#reranking)
 * [Thought segmentation](./guide/chat-session.md#stream-response-segments)
@@ -106,7 +106,7 @@ npx -y node-llama-cpp inspect gpu
 ```TypeScript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -135,7 +135,7 @@ console.log("AI: " + a1);
 ```TypeScript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -164,7 +164,7 @@ console.log("Embedding vector:", embedding.vector);
 ```TypeScript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -229,7 +229,7 @@ import {
     getLlama,
     LlamaChatSession,
     defineChatSessionFunction
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)

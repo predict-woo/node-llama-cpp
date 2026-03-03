@@ -23,8 +23,8 @@ export default defineConfig({
         "docs-site/",
         "templates/",
         ".vitepress/.cache/",
-        "packages/create-node-llama-cpp/dist/",
-        "packages/@node-llama-cpp/*/dist/",
+        "packages/create-llama-cpp-node/dist/",
+        "packages/@llama-cpp-node/*/dist/",
         ".releaserc.ts",
         ...(includeIgnoreFile(gitignorePath).ignores ?? [])
     ]

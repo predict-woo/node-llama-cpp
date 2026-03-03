@@ -7,7 +7,7 @@ export type ModelDownloadEndpoints = {
      * Can also be set by using the environment variable `HF_ENDPOINT` or `MODEL_ENDPOINT`.
      *
      * Defaults to `"https://huggingface.co/"`.
-     * @see [Model URIs](https://node-llama-cpp.withcat.ai/guide/downloading-models#model-uris)
+     * @see [Model URIs](https://llama-cpp-node.withcat.ai/guide/downloading-models#model-uris)
      */
     huggingFace?: string
 };

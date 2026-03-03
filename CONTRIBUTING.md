@@ -1,1 +1,1 @@
-# Moved [here](https://node-llama-cpp.withcat.ai/guide/contributing)
+# Moved [here](https://llama-cpp-node.withcat.ai/guide/contributing)

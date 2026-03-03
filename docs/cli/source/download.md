@@ -13,7 +13,7 @@ const commandDoc = docs.source.download;
 
 ::: tip NOTE
 
-`node-llama-cpp` ships with a git bundle of the release of `llama.cpp` it was built with,
+`llama-cpp-node` ships with a git bundle of the release of `llama.cpp` it was built with,
 so when you run the `source download` command without specifying a specific release or repo,
 it will use the bundled git bundle instead of downloading the release from GitHub.
 
@@ -28,10 +28,10 @@ If the build fails on macOS with the error `"/usr/bin/cc" is not able to compile
 ::: details Programmatically calling the `source download` command in your code
 To programmatically call this command in your code, call the `DownloadLlamaCppCommand` function:
 ```typescript
-import {DownloadLlamaCppCommand} from "node-llama-cpp/commands";
+import {DownloadLlamaCppCommand} from "llama-cpp-node/commands";
 await DownloadLlamaCppCommand({});
 ```
-> **Note:** The `node-llama-cpp/commands` import is subject to change and is unsupported inside Electron
+> **Note:** The `llama-cpp-node/commands` import is subject to change and is unsupported inside Electron
 
 :::
 

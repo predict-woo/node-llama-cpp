@@ -1,6 +1,6 @@
 ---
 title: Blog
-description: node-llama-cpp blog
+description: llama-cpp-node blog
 editLink: false
 lastUpdated: false
 outline: false

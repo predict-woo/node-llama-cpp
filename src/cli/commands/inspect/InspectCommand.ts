@@ -13,7 +13,7 @@ type InspectCommand = {
 export const InspectCommand: CommandModule<object, InspectCommand> = {
     command: "inspect <command>",
     describe: withCliCommandDescriptionDocsUrl(
-        "Inspect the inner workings of `node-llama-cpp`",
+        "Inspect the inner workings of `llama-cpp-node`",
         documentationPageUrls.CLI.Inspect.index
     ),
     builder(yargs) {

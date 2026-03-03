@@ -26,7 +26,7 @@ export type LlamaGrammarOptions = {
 };
 
 /**
- * @see [Using Grammar](https://node-llama-cpp.withcat.ai/guide/grammar) tutorial
+ * @see [Using Grammar](https://llama-cpp-node.withcat.ai/guide/grammar) tutorial
  */
 export class LlamaGrammar {
     /** @internal */ public readonly _llama: Llama;

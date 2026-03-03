@@ -1,6 +1,6 @@
 ---
 outline: [2, 4]
-description: Using embeddings with node-llama-cpp
+description: Using embeddings with llama-cpp-node
 ---
 # Using Embedding
 ::: info What is an embedding?
@@ -36,7 +36,7 @@ Comparing embeddings created using different models can lead to incorrect result
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaEmbedding} from "node-llama-cpp";
+import {getLlama, LlamaEmbedding} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -118,7 +118,7 @@ To get the raw embedding vectors, you can use the [`vector`](../api/classes/Llam
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -147,7 +147,7 @@ Doing this allows you to combine the best of both worlds: the speed of embedding
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -194,7 +194,7 @@ console.log("Ranked documents:", rankedDocuments);
 ## Using External Databases
 When you have a large number of documents you want to use with embedding, it's often more efficient to store them with their embedding in an external database and search for the most similar embeddings there.
 
-You can use `node-llama-cpp` to create an embedding and then store the [embedding vector](#raw-vector) in an external database that supports vector search.
+You can use `llama-cpp-node` to create an embedding and then store the [embedding vector](#raw-vector) in an external database that supports vector search.
 
 ### Vector databases {#databases}
 Here is a list of some vector databases you can use:

@@ -63,7 +63,7 @@ export type LlamaRankingContextOptions = {
 };
 
 /**
- * @see [Reranking Documents](https://node-llama-cpp.withcat.ai/guide/embedding#reranking) tutorial
+ * @see [Reranking Documents](https://llama-cpp-node.withcat.ai/guide/embedding#reranking) tutorial
  */
 export class LlamaRankingContext {
     /** @internal */ private readonly _llamaContext: LlamaContext;

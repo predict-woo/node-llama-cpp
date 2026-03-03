@@ -1,7 +1,7 @@
 import {fileURLToPath} from "url";
 import path from "path";
 import chalk from "chalk";
-import {getLlama, LlamaChatSession, resolveModelFile} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, resolveModelFile} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const modelsDirectory = path.join(__dirname, "..", "models");

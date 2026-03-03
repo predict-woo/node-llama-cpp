@@ -30,7 +30,7 @@ export async function testBindingBinary(
             getConsoleLogPrefix() +
             "Assuming the test passed with the risk that the process may crash due to an incompatible binary.\n" +
             getConsoleLogPrefix() +
-            'To resolve this issue, make sure that "node-llama-cpp" is not bundled together with other code and is imported as an external module with its original file structure.'
+            'To resolve this issue, make sure that "llama-cpp-node" is not bundled together with other code and is imported as an external module with its original file structure.'
         );
 
         return true;

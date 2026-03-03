@@ -1,6 +1,6 @@
 {
     "origins": [
-        "https://node-llama-cpp.withcat.ai",
+        "https://llama-cpp-node.withcat.ai",
         "https://withcatai.github.io",
         "http://localhost:5173",
         "http://localhost:3000"

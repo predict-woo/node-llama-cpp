@@ -1,9 +1,9 @@
 ---
 outline: deep
-description: Learn how to use the low-level API of node-llama-cpp
+description: Learn how to use the low-level API of llama-cpp-node
 ---
 # Low Level API
-`node-llama-cpp` provides high-level APIs for the most common use cases to make it easy to use.
+`llama-cpp-node` provides high-level APIs for the most common use cases to make it easy to use.
 However, it also provides low-level APIs for more advanced use cases.
 
 There are various low-level APIs that you can use - the more high level you can go, the more optimizations and features you can leverage. 
@@ -31,7 +31,7 @@ The operation of applying such heuristics to choose the next token is also calle
 When you pass sampling options (like [`temperature`](../api/type-aliases/SequenceEvaluateOptions#temperature), for example) for the generation of a token,
 it may make adjustments to the probabilities list so it can choose the next token based on the heuristics you provide.
 
-The sampling is done on the native side of `node-llama-cpp` for performance reasons.
+The sampling is done on the native side of `llama-cpp-node` for performance reasons.
 However, you can still opt to get the full probabilities list after the sampling is done,
 and you can pass no sampling options to avoid making any adjustments to the probabilities list.
 
@@ -43,11 +43,11 @@ When the context sequence is full and you want to evaluate more tokens onto it,
 some tokens will have to be removed to make room for new ones to be added.
 
 Ideally, you'd want to do that on your logic level, so you can control which content to keep and which to remove.
-> All the high-level APIs of `node-llama-cpp` [automatically do that](./chat-context-shift.md).
+> All the high-level APIs of `llama-cpp-node` [automatically do that](./chat-context-shift.md).
 
-If you don't do that, `node-llama-cpp` will automatically remove the oldest tokens from the context sequence state to make room for new ones.
+If you don't do that, `llama-cpp-node` will automatically remove the oldest tokens from the context sequence state to make room for new ones.
 
-You can customize the context shift strategy `node-llama-cpp` uses for the context sequence by configuring the [`contextShift`](../api/classes/LlamaContext.md#parameters) option when calling [`.getSequence(...)`](../api/classes/LlamaContext.md#getsequence),
+You can customize the context shift strategy `llama-cpp-node` uses for the context sequence by configuring the [`contextShift`](../api/classes/LlamaContext.md#parameters) option when calling [`.getSequence(...)`](../api/classes/LlamaContext.md#getsequence),
 or by passing a customized the [`contextShift`](../api/type-aliases/SequenceEvaluateOptions#contextshift) option to the evaluation method you use.
 
 ## Simple Evaluation {#simple-evaluation}
@@ -61,7 +61,7 @@ When using [`.evaluate(...)`](../api/classes/LlamaContextSequence.md#evaluate), 
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, Token, SequenceEvaluateOptions} from "node-llama-cpp";
+import {getLlama, Token, SequenceEvaluateOptions} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -99,7 +99,7 @@ You you provide a replacement token(s), it'll be appended to the context sequenc
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, Token, SequenceEvaluateOptions} from "node-llama-cpp";
+import {getLlama, Token, SequenceEvaluateOptions} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -148,7 +148,7 @@ You can use [`.evaluateWithMetadata(...)`](../api/classes/LlamaContextSequence.m
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, Token, SequenceEvaluateOptions} from "node-llama-cpp";
+import {getLlama, Token, SequenceEvaluateOptions} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -207,7 +207,7 @@ you can use [`.evaluateWithoutGeneratingNewTokens(...)`](../api/classes/LlamaCon
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -230,7 +230,7 @@ you can use [`.controlledEvaluate(...)`](../api/classes/LlamaContextSequence.md#
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, Token, ControlledEvaluateInputItem} from "node-llama-cpp";
+import {getLlama, Token, ControlledEvaluateInputItem} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -298,7 +298,7 @@ you can use [`.eraseContextTokenRanges(...)`](../api/classes/LlamaContextSequenc
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -337,13 +337,13 @@ console.log(
 You can adapt the existing context state to a new input to avoid re-evaluating some of the tokens you've already evaluated.
 
 ::: tip NOTE
-All the high-level APIs provided by `node-llama-cpp` automatically do this to improve efficiency and performance.
+All the high-level APIs provided by `llama-cpp-node` automatically do this to improve efficiency and performance.
 :::
 
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -411,7 +411,7 @@ Use with caution.
 ```typescript [Save state]
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -440,7 +440,7 @@ await sequence.saveStateToFile("state.bin");// [!code highlight]
 ```typescript [Load state]
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, Token} from "node-llama-cpp";
+import {getLlama, Token} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ---cut---

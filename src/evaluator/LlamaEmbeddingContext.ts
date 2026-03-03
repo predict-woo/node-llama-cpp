@@ -47,7 +47,7 @@ export type LlamaEmbeddingContextOptions = {
 };
 
 /**
- * @see [Using Embedding](https://node-llama-cpp.withcat.ai/guide/embedding) tutorial
+ * @see [Using Embedding](https://llama-cpp-node.withcat.ai/guide/embedding) tutorial
  */
 export class LlamaEmbeddingContext {
     /** @internal */ private readonly _llamaContext: LlamaContext;

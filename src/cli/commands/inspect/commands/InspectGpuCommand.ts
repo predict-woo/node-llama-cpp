@@ -78,7 +78,7 @@ export const InspectGpuCommand: CommandModule<object, InspectGpuCommand> = {
 
             if (moduleVersion != null) {
                 console.info();
-                console.info(`${chalk.yellow("node-llama-cpp:")} ${moduleVersion}`);
+                console.info(`${chalk.yellow("llama-cpp-node:")} ${moduleVersion}`);
             }
         } catch (err) {
             // do nothing

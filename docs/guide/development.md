@@ -1,9 +1,9 @@
 ---
 outline: deep
-description: Developing node-llama-cpp
+description: Developing llama-cpp-node
 ---
-# Developing `node-llama-cpp`
-This document describes how to set up your development environment to contribute to `node-llama-cpp`.
+# Developing `llama-cpp-node`
+This document describes how to set up your development environment to contribute to `llama-cpp-node`.
 
 ## Prerequisites
 - [Git](https://git-scm.com/). [GitHub's Guide to Installing Git](https://help.github.com/articles/set-up-git) is a good source of information.
@@ -11,7 +11,7 @@ This document describes how to set up your development environment to contribute
 - [cmake dependencies](https://github.com/cmake-js/cmake-js#:~:text=%5Bstring%5D-,Requirements%3A,-CMake) - make sure the required dependencies of `cmake` are installed on your machine. More info is available [here](https://github.com/cmake-js/cmake-js#installation:~:text=projectRoot/build%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5Bstring%5D-,Requirements%3A,-CMake) (you don't necessarily have to install `cmake`, just the dependencies)
 
 ## Setup
-1. [Fork `node-llama-cpp` repo](https://github.com/withcatai/node-llama-cpp/fork)
+1. [Fork `llama-cpp-node` repo](https://github.com/withcatai/node-llama-cpp/fork)
 2. Clone your forked repo to your local machine
 3. Install dependencies:
    ```shell
@@ -30,7 +30,7 @@ This document describes how to set up your development environment to contribute
    :::
 
 ## Development
-Whenever you add a new functionality to `node-llama-cpp`, consider improving the CLI to reflect this change.
+Whenever you add a new functionality to `llama-cpp-node`, consider improving the CLI to reflect this change.
 
 After you're done making changes to the code, please add some tests if possible, and update the documentation.
 

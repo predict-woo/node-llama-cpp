@@ -577,7 +577,7 @@ async function measureModel({
             getConsoleLogPrefix() +
             `"${expectedFileName}.js" file is not independent, so running sub-process tests cannot be done with it\n` +
             getConsoleLogPrefix() +
-            'To resolve this issue, make sure that "node-llama-cpp" is not bundled together with other code.'
+            'To resolve this issue, make sure that "llama-cpp-node" is not bundled together with other code.'
         );
 
         throw new Error("Sub-process tests cannot be done with the current file");

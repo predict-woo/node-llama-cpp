@@ -1,9 +1,9 @@
 ---
 outline: deep
-description: Downloading models with node-llama-cpp
+description: Downloading models with llama-cpp-node
 ---
 # Downloading Models
-`node-llama-cpp` is equipped with solutions to download models to use them in your project.
+`llama-cpp-node` is equipped with solutions to download models to use them in your project.
 The most common use case is to [download models using the CLI](#cli).
 
 <div class="tip custom-block" style="padding-top: 8px">
@@ -13,7 +13,7 @@ For a tutorial on how to choose models and where to get them from, read the [cho
 </div>
 
 ## Using the CLI {#cli}
-`node-llama-cpp` is equipped with a [model downloader](../cli/pull) you can use to download models and [their related files](../api/functions/createModelDownloader.md) easily and at high speed (using [`ipull`](https://www.npmjs.com/package/ipull)).
+`llama-cpp-node` is equipped with a [model downloader](../cli/pull) you can use to download models and [their related files](../api/functions/createModelDownloader.md) easily and at high speed (using [`ipull`](https://www.npmjs.com/package/ipull)).
 
 It's recommended to add a `models:pull` script to your `package.json` to download all the models used by your project to a local `models` folder.
 
@@ -25,7 +25,7 @@ Here's an example of how you can set this up in your `package.json`:
 {
   "scripts": {
       "postinstall": "npm run models:pull",
-      "models:pull": "node-llama-cpp pull --dir ./models <model-url>"
+      "models:pull": "llama-cpp-node pull --dir ./models <model-url>"
   }
 }
 ```
@@ -51,7 +51,7 @@ You can pass a list of model URLs to download multiple models at once:
 {
   "scripts": {
       "postinstall": "npm run models:pull",
-      "models:pull": "node-llama-cpp pull --dir ./models <model1-url> <model2-url> <model3-url>"
+      "models:pull": "llama-cpp-node pull --dir ./models <model1-url> <model2-url> <model3-url>"
   }
 }
 ```
@@ -97,7 +97,7 @@ Here's an example usage of the [`resolveModelFile`](../api/functions/resolveMode
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, resolveModelFile} from "node-llama-cpp";
+import {getLlama, resolveModelFile} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const modelsDirectory = path.join(__dirname, "models");
@@ -150,7 +150,7 @@ Alternatively, you can use the token in the [`tokens`](../api/type-aliases/Model
 You can inspect the metadata of a remote model without downloading it by either using the [`inspect gguf`](../cli/inspect/gguf.md) command with a URL,
 or using the [`readGgufFileInfo`](../api/functions/readGgufFileInfo.md) method with a URL:
 ```typescript
-import {readGgufFileInfo} from "node-llama-cpp";
+import {readGgufFileInfo} from "llama-cpp-node";
 
 const modelMetadata = await readGgufFileInfo("<model url>");
 ```
@@ -163,7 +163,7 @@ so you won't waste time downloading a model that won't work on your machine.
 
 You can do so using the [`inspect estimate`](../cli/inspect/estimate.md) command with a URL:
 ```shell
-npx --no node-llama-cpp inspect estimate <model-url>
+npx --no llama-cpp-node inspect estimate <model-url>
 ```
 
 Running this command will attempt to find the best balance of parameters for the model to run on your machine,
@@ -171,12 +171,12 @@ and it'll output the estimated compatibility of the model with your machine with
 
 > **Note:** don't specify any of these configurations when loading the model.
 > 
-> [`node-llama-cpp` will balance the parameters automatically](./index.md#gpu-support) also when loading the model,
+> [`llama-cpp-node` will balance the parameters automatically](./index.md#gpu-support) also when loading the model,
 > context, etc.
 
 You can also estimate the compatibility of a model programmatically using the [`GgufInsights` class](../api/classes/GgufInsights.md):
 ```typescript
-import {getLlama, readGgufFileInfo, GgufInsights} from "node-llama-cpp";
+import {getLlama, readGgufFileInfo, GgufInsights} from "llama-cpp-node";
 
 const llama = await getLlama();
 const modelMetadata = await readGgufFileInfo("<model url>");

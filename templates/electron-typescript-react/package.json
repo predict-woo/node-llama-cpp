@@ -1,5 +1,5 @@
 {
-  "name": "node-llama-cpp-project",
+  "name": "llama-cpp-node-project",
   "private": true,
   "version": "0.0.0",
   "main": "./dist-electron/index.js",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "_postinstall": "npm run models:pull",
-    "models:pull": "node-llama-cpp pull --dir ./models \"{{modelUriOrUrl|escape|escape}}\"",
+    "models:pull": "llama-cpp-node pull --dir ./models \"{{modelUriOrUrl|escape|escape}}\"",
     "start": "vite dev",
     "start:inspect": "cross-env ENABLE_INSPECT=true vite dev",
     "start:build": "electron ./dist-electron",
@@ -29,7 +29,7 @@
     "highlight.js": "^11.11.1",
     "lifecycle-utils": "^3.1.1",
     "markdown-it": "^14.1.1",
-    "node-llama-cpp": "file:../..",
+    "llama-cpp-node": "file:../..",
     "pretty-ms": "^9.3.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

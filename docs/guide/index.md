@@ -1,14 +1,14 @@
 ---
 outline: deep
-description: Get started with node-llama-cpp
+description: Get started with llama-cpp-node
 ---
 # Getting Started
 
 ## Installation {#installation}
 ### Scaffold a New Project {#scaffold-new-project}
-To create a new `node-llama-cpp` project with everything set up, run this command:
+To create a new `llama-cpp-node` project with everything set up, run this command:
 ```shell
-npm create node-llama-cpp@latest
+npm create llama-cpp-node@latest
 ```
 > It may take a minute to download all the prebuilt binaries
 
@@ -19,23 +19,23 @@ If this is your first time running models on your machine, we recommend starting
 ### Existing Project {#add-to-existing-project}
 Inside of your node.js project directory, run this command:
 ```shell
-npm install node-llama-cpp
+npm install llama-cpp-node
 ```
 
-> `node-llama-cpp` comes with pre-built binaries for macOS, Linux and Windows.
+> `llama-cpp-node` comes with pre-built binaries for macOS, Linux and Windows.
 >
 > If binaries are not available for your platform, it'll fallback to download a release of `llama.cpp` and build it from source with `cmake`.
 > To disable this behavior, set the environment variable `NODE_LLAMA_CPP_SKIP_DOWNLOAD` to `true`.
 
 ## ESM Usage {#esm-usage}
-`node-llama-cpp` is an [ES module](https://nodejs.org/api/esm.html#modules-ecmascript-modules), so can only use `import` to load it and cannot use `require`.
+`llama-cpp-node` is an [ES module](https://nodejs.org/api/esm.html#modules-ecmascript-modules), so can only use `import` to load it and cannot use `require`.
 
 To make sure you can use it in your project, make sure your `package.json` file has `"type": "module"` in it.
 
 For workarounds for existing projects, see the [ESM troubleshooting guide](./troubleshooting.md#esm-usage).
 
 ## GPU Support {#gpu-support}
-`node-llama-cpp` automatically detects the available compute layers on your machine and uses the best one by default,
+`llama-cpp-node` automatically detects the available compute layers on your machine and uses the best one by default,
 as well as balances the default settings to get the best performance from your hardware.
 No need to manually configure anything.
 
@@ -48,7 +48,7 @@ No need to manually configure anything.
 
 To inspect your hardware, run this command:
 ```shell
-npx --no node-llama-cpp inspect gpu
+npx --no llama-cpp-node inspect gpu
 ```
 
 ## Getting a Model File
@@ -60,13 +60,13 @@ To ensure you can chat with the model, make sure you [choose an Instruct model](
 
 For improved download speeds, you can use the [`pull`](../cli/pull.md) command to download a model:
 ```shell
-npx --no node-llama-cpp pull --dir ./models <model-file-url>
+npx --no llama-cpp-node pull --dir ./models <model-file-url>
 ```
 
 ::: tip Not sure what model to get started with?
 Run the [`chat`](../cli/chat.md) command with no parameters to see a list of recommended models:
 ```shell
-npx --no node-llama-cpp chat
+npx --no llama-cpp-node chat
 ```
 :::
 
@@ -75,7 +75,7 @@ For more tips on choosing a model, see the [choosing a model guide](./choosing-a
 ## Validating the Model
 To validate that the model you downloaded is working properly, use the [`chat`](../cli/chat.md) command to chat with it:
 ```shell
-npx --no node-llama-cpp chat <path-to-a-model-file-on-your-computer>
+npx --no llama-cpp-node chat <path-to-a-model-file-on-your-computer>
 ```
 
 Try telling the model `Hi there` and see how it reacts.
@@ -83,14 +83,14 @@ If the response looks weird or doesn't make sense, try using a different model.
 
 If the model doesn't stop generating output, try using a different [chat wrapper](./chat-wrapper). For example:
 ```shell
-npx --no node-llama-cpp chat --wrapper general <path-to-a-model-file-on-your-computer>
+npx --no llama-cpp-node chat --wrapper general <path-to-a-model-file-on-your-computer>
 ```
 
 > [!TIP]
 > To download a model and prompt it right away with a single command,
 > use the [`chat`](../cli/chat.md) command and pass a model URL together with a `--prompt` flag:
 > ```shell
-> npx --no node-llama-cpp chat --prompt 'Hi there' <model-url>
+> npx --no llama-cpp-node chat --prompt 'Hi there' <model-url>
 > ```
 
 ## Usage {#usage}
@@ -98,7 +98,7 @@ npx --no node-llama-cpp chat --wrapper general <path-to-a-model-file-on-your-com
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -145,7 +145,7 @@ To learn more about using grammars correctly, read the [grammar guide](./grammar
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -202,7 +202,7 @@ console.log(
 ### Chatbot With Function Calling {#chatbot-with-function-calling}
 You can provide functions that the model can call during generation to retrieve information or perform actions.
 
-Some models have official support for function calling in `node-llama-cpp` (such as [Functionary](https://huggingface.co/meetkai/functionary-small-v2.5-GGUF/blob/main/functionary-small-v2.5.Q4_0.gguf) and [Llama 3 Instruct](https://huggingface.co/mradermacher/Meta-Llama-3-8B-Instruct-GGUF/blob/main/Meta-Llama-3-8B-Instruct.Q4_K_M.gguf)),
+Some models have official support for function calling in `llama-cpp-node` (such as [Functionary](https://huggingface.co/meetkai/functionary-small-v2.5-GGUF/blob/main/functionary-small-v2.5.Q4_0.gguf) and [Llama 3 Instruct](https://huggingface.co/mradermacher/Meta-Llama-3-8B-Instruct-GGUF/blob/main/Meta-Llama-3-8B-Instruct.Q4_K_M.gguf)),
 while other models fallback to a generic function calling mechanism that works with many models, but not all of them.
 
 ::: tip NOTE
@@ -214,7 +214,7 @@ To learn more about using function calling correctly, read the [function calling
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, defineChatSessionFunction} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, defineChatSessionFunction} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -271,7 +271,7 @@ To learn more about using low level APIs, read the [low level API guide](./low-l
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, Token} from "node-llama-cpp";
+import {getLlama, Token} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -306,15 +306,15 @@ console.log("AI: " + a1.trim());
 ```
 
 ## Next Steps {#next-steps}
-Now that you've learned the basics of `node-llama-cpp`,
+Now that you've learned the basics of `llama-cpp-node`,
 you can explore more advanced topics by reading the guides in the _Guide_ section of the sidebar.
 
 Use [GitHub Discussions](https://github.com/withcatai/node-llama-cpp/discussions) to ask questions if you get stuck,<br/>
-and [give `node-llama-cpp` a star on GitHub](https://github.com/withcatai/node-llama-cpp) if you found it useful.
+and [give `llama-cpp-node` a star on GitHub](https://github.com/withcatai/node-llama-cpp) if you found it useful.
 
 Explore the [API reference](../api/functions/getLlama.md) to learn more about the available functions and classes,
 and use the search bar (press <kbd class="doc-kbd">/</kbd>) to find documentation for a specific topic or API.
 
 Check out the [roadmap](https://github.com/orgs/withcatai/projects/1) to see what's coming next,<br/>
-visit the [awesome list](./awesome.md) to find great projects that use `node-llama-cpp`,<br/>
-and consider [sponsoring `node-llama-cpp`](https://github.com/sponsors/giladgd) to accelerate the development of new features.
+visit the [awesome list](./awesome.md) to find great projects that use `llama-cpp-node`,<br/>
+and consider [sponsoring `llama-cpp-node`](https://github.com/sponsors/giladgd) to accelerate the development of new features.

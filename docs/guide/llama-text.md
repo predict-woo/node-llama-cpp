@@ -1,5 +1,5 @@
 ---
-description: The basics of using LlamaText in node-llama-cpp
+description: The basics of using LlamaText in llama-cpp-node
 ---
 # Using LlamaText
 The [`LlamaText`](../api/classes/LlamaText.md) class is used to create content to be loaded into a model's context state without directly using the model's tokenizer for that.
@@ -24,7 +24,7 @@ We can do something like this:
 
 ::: code-group
 ```typescript [Unsafe code]
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const llama = await getLlama();
 const model = await llama.loadModel({modelPath: "path/to/model.gguf"});
@@ -53,7 +53,7 @@ Now the user can override the system prompt and do whatever they want.
 What we can do to mitigate it, is to do something like this:
 ::: code-group
 ```typescript [OK code]
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const llama = await getLlama();
 const model = await llama.loadModel({modelPath: "path/to/model.gguf"});
@@ -82,7 +82,7 @@ This is where [`LlamaText`](../api/classes/LlamaText.md) comes in handy.
 Let's see how can we use [`LlamaText`](../api/classes/LlamaText.md) to achieve the same result:
 ::: code-group
 ```typescript [Good and safe code]
-import {getLlama, LlamaText, SpecialTokensText} from "node-llama-cpp";
+import {getLlama, LlamaText, SpecialTokensText} from "llama-cpp-node";
 
 const llama = await getLlama();
 const model = await llama.loadModel({modelPath: "path/to/model.gguf"});
@@ -113,7 +113,7 @@ To do that, you can convert it to a JSON object and then save it to a file.
 
 ```typescript
 import fs from "fs/promises";
-import {LlamaText, SpecialToken, SpecialTokensText} from "node-llama-cpp";
+import {LlamaText, SpecialToken, SpecialTokensText} from "llama-cpp-node";
 
 const content = LlamaText([
     new SpecialToken("BOS"),
@@ -127,14 +127,14 @@ await fs.writeFile("content.json", JSON.stringify(contentJson), "utf8");
 
 ```typescript
 import fs from "fs/promises";
-import {LlamaText, SpecialTokensText} from "node-llama-cpp";
+import {LlamaText, SpecialTokensText} from "llama-cpp-node";
 
 const contentJson = JSON.parse(await fs.readFile("content.json", "utf8"));
 const content = LlamaText.fromJSON(contentJson);
 ```
 
-## Input Safety in `node-llama-cpp` {#input-safety-in-node-llama-cpp}
-[`LlamaText`](../api/classes/LlamaText.md) is used everywhere in `node-llama-cpp` to ensure the safety of the user input.
+## Input Safety in `llama-cpp-node` {#input-safety-in-llama-cpp-node}
+[`LlamaText`](../api/classes/LlamaText.md) is used everywhere in `llama-cpp-node` to ensure the safety of the user input.
 This ensures that user input cannot introduce special token injection attacks.
 
 When using any of the builtin [chat wrappers](./chat-wrapper.md),

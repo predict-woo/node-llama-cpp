@@ -32,7 +32,7 @@ type InitCommand = {
 export const InitCommand: CommandModule<object, InitCommand> = {
     command: "init [name]",
     describe: withCliCommandDescriptionDocsUrl(
-        "Generate a new `node-llama-cpp` project from a template",
+        "Generate a new `llama-cpp-node` project from a template",
         documentationPageUrls.CLI.Init
     ),
     builder(yargs) {
@@ -71,7 +71,7 @@ export const InitCommand: CommandModule<object, InitCommand> = {
 export const CreateCliCommand: CommandModule<object, InitCommand> = {
     command: "$0",
     describe: withCliCommandDescriptionDocsUrl(
-        "Scaffold a new `node-llama-cpp` project from a template",
+        "Scaffold a new `llama-cpp-node` project from a template",
         documentationPageUrls.CLI.Init
     ),
     builder: InitCommand.builder,
@@ -240,8 +240,8 @@ async function askForTemplate() {
 
 async function askForProjectName(currentDirectory: string) {
     console.info();
-    const projectName = await consolePromptQuestion(chalk.bold("Enter a project name:") + chalk.dim(" (node-llama-cpp-project) "), {
-        defaultValue: "node-llama-cpp-project",
+    const projectName = await consolePromptQuestion(chalk.bold("Enter a project name:") + chalk.dim(" (llama-cpp-node-project) "), {
+        defaultValue: "llama-cpp-node-project",
         exitOnCtrlC: true,
         async validate(input) {
             const {validForNewPackages, errors} = validateNpmPackageName(input);

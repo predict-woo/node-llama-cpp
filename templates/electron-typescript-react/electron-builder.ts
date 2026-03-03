@@ -2,9 +2,9 @@ import path from "node:path";
 import {$} from "zx";
 import type {Configuration} from "electron-builder";
 
-const appId = "node-llama-cpp.electron.example";
-const productName = "node-llama-cpp Electron example";
-const executableName = "node-llama-cpp-electron-example";
+const appId = "llama-cpp-node.electron.example";
+const productName = "llama-cpp-node Electron example";
+const executableName = "llama-cpp-node-electron-example";
 const appxIdentityName = "node.llama.cpp.electron.example";
 
 /**
@@ -34,17 +34,17 @@ export default {
     files: [
         "dist",
         "dist-electron",
-        "!node_modules/node-llama-cpp/bins/**/*",
-        "node_modules/node-llama-cpp/bins/${os}-${arch}*/**/*",
-        "!node_modules/node-llama-cpp/llama/localBuilds/**/*",
-        "node_modules/node-llama-cpp/llama/localBuilds/${os}-${arch}*/**/*",
-        "!node_modules/@node-llama-cpp/*/bins/**/*",
-        "node_modules/@node-llama-cpp/${os}-${arch}*/bins/**/*"
+        "!node_modules/llama-cpp-node/bins/**/*",
+        "node_modules/llama-cpp-node/bins/${os}-${arch}*/**/*",
+        "!node_modules/llama-cpp-node/llama/localBuilds/**/*",
+        "node_modules/llama-cpp-node/llama/localBuilds/${os}-${arch}*/**/*",
+        "!node_modules/@llama-cpp-node/*/bins/**/*",
+        "node_modules/@llama-cpp-node/${os}-${arch}*/bins/**/*"
     ],
     asarUnpack: [
-        "node_modules/node-llama-cpp/bins",
-        "node_modules/node-llama-cpp/llama/localBuilds",
-        "node_modules/@node-llama-cpp/*"
+        "node_modules/llama-cpp-node/bins",
+        "node_modules/llama-cpp-node/llama/localBuilds",
+        "node_modules/@llama-cpp-node/*"
     ],
     mac: {
         target: [{

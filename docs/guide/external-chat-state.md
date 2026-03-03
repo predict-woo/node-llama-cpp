@@ -3,7 +3,7 @@ description: Chat with a model and manage the chat state externally
 ---
 # External Chat State
 ::: warning
-If you're not building a library around `node-llama-cpp`, you'd probably want to use the simpler [`LlamaChatSession`](../api/classes/LlamaChatSession.md); read more on the [chat session documentation](./chat-session.md).
+If you're not building a library around `llama-cpp-node`, you'd probably want to use the simpler [`LlamaChatSession`](../api/classes/LlamaChatSession.md); read more on the [chat session documentation](./chat-session.md).
 
 You can [save and restore a chat history](./chat-session.md#save-and-restore) on [`LlamaChatSession`](../api/classes/LlamaChatSession.md) instead of managing the chat state externally.
 :::
@@ -11,7 +11,7 @@ You can [save and restore a chat history](./chat-session.md#save-and-restore) on
 To interact with a model in a chat form, you can use [`LlamaChatSession`](../api/classes/LlamaChatSession.md),
 which is a stateful chat session that manages the chat state on its own.
 
-When building a library around `node-llama-cpp`, you may want to store that chat state externally and control the evaluations yourself.
+When building a library around `llama-cpp-node`, you may want to store that chat state externally and control the evaluations yourself.
 
 This is where [`LlamaChat`](../api/classes/LlamaChat.md) may come in handy.
 [`LlamaChat`](../api/classes/LlamaChat.md) Allows you to generate a completion to an existing chat session and manage the evaluation yourself,
@@ -23,7 +23,7 @@ Let's see how you can use [`LlamaChat`](../api/classes/LlamaChat.md) to prompt a
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChat} from "node-llama-cpp";
+import {getLlama, LlamaChat} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -106,7 +106,7 @@ and the state from the previous evaluation is still present in the context seque
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChat} from "node-llama-cpp";
+import {getLlama, LlamaChat} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -210,7 +210,7 @@ import path from "path";
 import {
     getLlama, LlamaChat, ChatModelFunctions, ChatHistoryItem,
     ChatModelResponse, ChatModelFunctionCall
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

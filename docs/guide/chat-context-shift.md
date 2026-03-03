@@ -2,9 +2,9 @@
 When the chat history gets longer than the sequence's context size, we have to remove the oldest tokens from the context state to make room for new tokens to be generated.
 This is called a context shift.
 
-`node-llama-cpp` has a smart mechanism to handle context shifts on the chat level, so the oldest messages are truncated (from their beginning) or removed from the context state, while keeping the system prompt in place to ensure the model follows the guidelines you set for it.
+`llama-cpp-node` has a smart mechanism to handle context shifts on the chat level, so the oldest messages are truncated (from their beginning) or removed from the context state, while keeping the system prompt in place to ensure the model follows the guidelines you set for it.
 
-You can override `node-llama-cpp`'s default context shift strategy
+You can override `llama-cpp-node`'s default context shift strategy
 when using [`LlamaChatSession`](../api/classes/LlamaChatSession.md) or [`LlamaChat`](../api/classes/LlamaChat.md)
 by providing a custom context shift strategy.
 
@@ -31,7 +31,7 @@ It's important to keep the last user prompt and model response as-is to prevent 
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

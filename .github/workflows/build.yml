@@ -616,7 +616,7 @@ jobs:
         id: set-npm-url
         run: |
           if [ -f .semanticRelease.npmPackage.deployedVersion.txt ]; then
-            echo "npm-url=https://www.npmjs.com/package/node-llama-cpp/v/$(cat .semanticRelease.npmPackage.deployedVersion.txt)" >> $GITHUB_OUTPUT
+            echo "npm-url=https://www.npmjs.com/package/llama-cpp-node/v/$(cat .semanticRelease.npmPackage.deployedVersion.txt)" >> $GITHUB_OUTPUT
           fi
       - name: Set package version to GITHUB_OUTPUT
         id: set-package-version
@@ -624,26 +624,26 @@ jobs:
           if [ -f .semanticRelease.npmPackage.deployedVersion.txt ]; then
             echo "package-version=$(cat .semanticRelease.npmPackage.deployedVersion.txt)" >> $GITHUB_OUTPUT
           fi
-      - name: Prepare `create-node-llama-cpp` module
+      - name: Prepare `create-llama-cpp-node` module
         if: steps.set-npm-url.outputs.npm-url != ''
         run: |
           export DEPLOYED_PACKAGE_VERSION=$(cat .semanticRelease.npmPackage.deployedVersion.txt)
           
-          pushd packages/create-node-llama-cpp
+          pushd packages/create-llama-cpp-node
           npm ci --ignore-scripts
           popd
           
           npx --no vite-node ./scripts/prepareCreateNodeLlamaCppModuleForPublish.ts --packageVersion "$DEPLOYED_PACKAGE_VERSION"
           
-          pushd packages/create-node-llama-cpp
+          pushd packages/create-llama-cpp-node
           npm run build
-      - name: Release `create-node-llama-cpp` module
+      - name: Release `create-llama-cpp-node` module
         if: steps.set-npm-url.outputs.npm-url != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_RELEASE_REF: ${{ github.ref }}
         run: |
-          cd packages/create-node-llama-cpp
+          cd packages/create-llama-cpp-node
           
           if [ "$GH_RELEASE_REF" == "refs/heads/beta" ]; then
               npm publish --tag beta

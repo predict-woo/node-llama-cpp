@@ -24,7 +24,7 @@ for (const release of context.releases) {
     if (release.pluginName === "@semantic-release/npm") {
         if (release.url == null) {
             release.name = "npm package (@latest dist-tag)";
-            release.url = "https://www.npmjs.com/package/node-llama-cpp/v/" + release.version;
+            release.url = "https://www.npmjs.com/package/llama-cpp-node/v/" + release.version;
         }
     } else if (release.pluginName === "@semantic-release/github") {
         if (release.url == null) {

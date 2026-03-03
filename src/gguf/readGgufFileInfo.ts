@@ -80,7 +80,7 @@ export async function readGgufFileInfo(pathOrUri: string, {
 
     /**
      * Configure the URLs used for resolving model URIs.
-     * @see [Model URIs](https://node-llama-cpp.withcat.ai/guide/downloading-models#model-uris)
+     * @see [Model URIs](https://llama-cpp-node.withcat.ai/guide/downloading-models#model-uris)
      */
     endpoints?: ModelDownloadEndpoints
 } = {}) {

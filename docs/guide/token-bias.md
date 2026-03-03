@@ -24,7 +24,7 @@ and also apply biases to some other tokens:
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, TokenBias} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, TokenBias} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

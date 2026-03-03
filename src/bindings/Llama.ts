@@ -378,8 +378,8 @@ export class Llama {
 
     /* eslint-disable @stylistic/max-len */
     /**
-     * @see [Using a JSON Schema Grammar](https://node-llama-cpp.withcat.ai/guide/grammar#json-schema) tutorial
-     * @see [Reducing Hallucinations When Using JSON Schema Grammar](https://node-llama-cpp.withcat.ai/guide/grammar#reducing-json-schema-hallucinations) tutorial
+     * @see [Using a JSON Schema Grammar](https://llama-cpp-node.withcat.ai/guide/grammar#json-schema) tutorial
+     * @see [Reducing Hallucinations When Using JSON Schema Grammar](https://llama-cpp-node.withcat.ai/guide/grammar#reducing-json-schema-hallucinations) tutorial
      */
     public async createGrammarForJsonSchema<
         const T extends GbnfJsonSchema<Defs>,
@@ -394,7 +394,7 @@ export class Llama {
     }
 
     /**
-     * @see [Using Grammar](https://node-llama-cpp.withcat.ai/guide/grammar) tutorial
+     * @see [Using Grammar](https://llama-cpp-node.withcat.ai/guide/grammar) tutorial
      */
     public async createGrammar(options: LlamaGrammarOptions) {
         return new LlamaGrammar(this, options);

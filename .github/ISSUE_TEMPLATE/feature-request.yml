@@ -9,15 +9,15 @@ body:
   - type: markdown
     attributes:
       value: >-
-        Have a question? This is the `node-llama-cpp` issue tracker – and is not the right place for general support or questions.
-        Instead, use [`node-llama-cpp` GitHub Discussions](https://github.com/withcatai/node-llama-cpp/discussions) to get support or ask questions.
+        Have a question? This is the `llama-cpp-node` issue tracker – and is not the right place for general support or questions.
+        Instead, use [`llama-cpp-node` GitHub Discussions](https://github.com/withcatai/node-llama-cpp/discussions) to get support or ask questions.
   - type: textarea
     id: problem
     attributes:
       label: Feature Description
       description: >-
         A clear and concise description of what the problem is,
-        and why it needs to be implemented as a new feature in `node-llama-cpp`.
+        and why it needs to be implemented as a new feature in `llama-cpp-node`.
       placeholder: For example, "I'm frustrated when ..."
     validations:
       required: true

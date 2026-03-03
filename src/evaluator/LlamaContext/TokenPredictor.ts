@@ -3,7 +3,7 @@ import {SequenceEvaluateOptions} from "./types.js";
 import {LlamaContextSequence} from "./LlamaContext.js";
 
 /**
- * @see [Using Token Predictors](https://node-llama-cpp.withcat.ai/guide/token-prediction#custom)
+ * @see [Using Token Predictors](https://llama-cpp-node.withcat.ai/guide/token-prediction#custom)
  */
 export abstract class TokenPredictor {
     /**

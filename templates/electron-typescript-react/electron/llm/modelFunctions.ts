@@ -1,5 +1,5 @@
-import {ChatSessionModelFunctions} from "node-llama-cpp";
-// import {defineChatSessionFunction} from "node-llama-cpp";
+import {ChatSessionModelFunctions} from "llama-cpp-node";
+// import {defineChatSessionFunction} from "llama-cpp-node";
 
 export const modelFunctions = {
     // getDate: defineChatSessionFunction({

@@ -4,7 +4,7 @@ import {LlamaText, SpecialToken, SpecialTokensText} from "../utils/LlamaText.js"
 
 /**
  * This chat wrapper is not safe against chat syntax injection attacks
- * ([learn more](https://node-llama-cpp.withcat.ai/guide/llama-text#input-safety-in-node-llama-cpp)).
+ * ([learn more](https://llama-cpp-node.withcat.ai/guide/llama-text#input-safety-in-llama-cpp-node)).
  */
 export class FalconChatWrapper extends ChatWrapper {
     public readonly wrapperName: string = "Falcon";

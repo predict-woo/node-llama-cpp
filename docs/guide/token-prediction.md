@@ -1,5 +1,5 @@
 ---
-description: Using token predictors to speed up the generation process in node-llama-cpp
+description: Using token predictors to speed up the generation process in llama-cpp-node
 ---
 # Using Token Predictors
 ## Background {#background}
@@ -93,7 +93,7 @@ import {
     getLlama,
     DraftSequenceTokenPredictor,
     LlamaChatSession
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -168,7 +168,7 @@ import {
     getLlama,
     InputLookupTokenPredictor,
     LlamaChatSession
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -231,7 +231,7 @@ import {
     Token,
     SequenceEvaluateOptions,
     DisposedError
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 export class MyCustomTokenPredictor extends TokenPredictor {
     public readonly minPredictionTokens: number;
@@ -331,4 +331,4 @@ export class MyCustomTokenPredictor extends TokenPredictor {
     }
 }
 ```
-> If you manage to create a generic and performant token predictor, consider [opening a PR](./development.md) to contribute it to `node-llama-cpp`.
+> If you manage to create a generic and performant token predictor, consider [opening a PR](./development.md) to contribute it to `llama-cpp-node`.

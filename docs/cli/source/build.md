@@ -18,10 +18,10 @@ If the build fails on macOS with the error `"/usr/bin/cc" is not able to compile
 ::: details Programmatically calling the `source build` command in your code
 To programmatically call this command in your code, call the `BuildLlamaCppCommand` function:
 ```typescript
-import {BuildLlamaCppCommand} from "node-llama-cpp/commands";
+import {BuildLlamaCppCommand} from "llama-cpp-node/commands";
 await BuildLlamaCppCommand({});
 ```
-> **Note:** The `node-llama-cpp/commands` import is subject to change and is unsupported inside Electron
+> **Note:** The `llama-cpp-node/commands` import is subject to change and is unsupported inside Electron
 
 :::
 

@@ -1,8 +1,8 @@
 ---
-description: Awesome projects that use node-llama-cpp
+description: Awesome projects that use llama-cpp-node
 ---
-# Awesome `node-llama-cpp`
-:sunglasses: Awesome projects that use `node-llama-cpp`.
+# Awesome `llama-cpp-node`
+:sunglasses: Awesome projects that use `llama-cpp-node`.
 
 <script setup lang="ts">
 import DataBadge from "../../.vitepress/components/DataBadge/DataBadge.vue";
@@ -33,4 +33,4 @@ import DataBadge from "../../.vitepress/components/DataBadge/DataBadge.vue";
 
 > To add a project to this list, [open a PR](https://github.com/withcatai/node-llama-cpp/edit/master/docs/guide/awesome.md).
 >
-> To have a project listed here, it should clearly state that it uses `node-llama-cpp`.
+> To have a project listed here, it should clearly state that it uses `llama-cpp-node`.

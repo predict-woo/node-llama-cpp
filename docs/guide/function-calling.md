@@ -6,7 +6,7 @@ description: Using function calling
 
 When prompting a model using a [`LlamaChatSession`](../api/classes/LlamaChatSession.md), you can provide a list of functions that a model can call during generation to retrieve information or perform actions.
 
-For this to work, `node-llama-cpp` tells the model what functions are available and what parameters they take, and instructs it to call those as needed.
+For this to work, `llama-cpp-node` tells the model what functions are available and what parameters they take, and instructs it to call those as needed.
 It also ensures that when the model calls a function, it always uses the correct parameters.
 
 Some models have built-in support for function calling, and some of them are not trained for that.
@@ -24,7 +24,7 @@ Let's see an example of how to use function calling with a _Llama 3.1_ model:
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, defineChatSessionFunction} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, defineChatSessionFunction} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -112,7 +112,7 @@ Let's see an example of how to use [`oneOf`](../api/type-aliases/GbnfJsonOneOfSc
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, defineChatSessionFunction} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, defineChatSessionFunction} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -197,7 +197,7 @@ import {
     ChatWrapperSettings, ChatWrapperGenerateContextStateOptions,
     ChatWrapperGeneratedContextState, LlamaText, ChatModelFunctions,
     ChatModelFunctionsDocumentationGenerator, defineChatSessionFunction
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -359,7 +359,7 @@ To support parallel function calling syntax, you can configure the [`functions.p
 ```typescript
 import {
     ChatWrapper, SpecialToken, ChatWrapperSettings, LlamaText
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 // ---cut---
 class MyCustomChatWrapper extends ChatWrapper {
     public readonly wrapperName: string = "MyCustomChat";
@@ -423,7 +423,7 @@ To do this, create your [`LlamaChatSession`](../api/classes/LlamaChatSession.md)
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -434,7 +434,7 @@ const model = await llama.loadModel({
 const context = await model.createContext();
 
 // ---cut---
-import {LlamaChatSession, resolveChatWrapper} from "node-llama-cpp";
+import {LlamaChatSession, resolveChatWrapper} from "llama-cpp-node";
 
 const session = new LlamaChatSession({
     contextSequence: context.getSequence(),

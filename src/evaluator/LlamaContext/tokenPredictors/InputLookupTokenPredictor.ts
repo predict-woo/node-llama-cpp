@@ -17,7 +17,7 @@ const defaultPredictionMaxLength = 3;
  * This works in all completion classes, including `LlamaChatSession`, `LlamaChat`, and `LlamaCompletion`.
  *
  * Based on https://github.com/apoorvumang/prompt-lookup-decoding.
- * @see [Using Token Predictors: Input Lookup Token Predictor](https://node-llama-cpp.withcat.ai/guide/token-prediction#input-lookup)
+ * @see [Using Token Predictors: Input Lookup Token Predictor](https://llama-cpp-node.withcat.ai/guide/token-prediction#input-lookup)
  */
 export class InputLookupTokenPredictor extends TokenPredictor {
     /** @internal */ private readonly _patternMinLength: number;

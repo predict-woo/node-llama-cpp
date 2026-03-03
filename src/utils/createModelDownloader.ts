@@ -33,7 +33,7 @@ export type ModelDownloaderOptions = ({
 }) & {
     /**
      * The directory to save the model file to.
-     * Default to `node-llama-cpp`'s default global models directory (`~/.node-llama-cpp/models`).
+     * Default to `llama-cpp-node`'s default global models directory (`~/.llama-cpp-node/models`).
      */
     dirPath?: string,
 
@@ -75,7 +75,7 @@ export type ModelDownloaderOptions = ({
 
     /**
      * Configure the URLs used for resolving model URIs.
-     * @see [Model URIs](https://node-llama-cpp.withcat.ai/guide/downloading-models#model-uris)
+     * @see [Model URIs](https://llama-cpp-node.withcat.ai/guide/downloading-models#model-uris)
      */
     endpoints?: ModelDownloadEndpoints,
 
@@ -105,7 +105,7 @@ export type ModelDownloaderOptions = ({
  * ```typescript
  * import {fileURLToPath} from "url";
  * import path from "path";
- * import {createModelDownloader, getLlama} from "node-llama-cpp";
+ * import {createModelDownloader, getLlama} from "llama-cpp-node";
  *
  * const __dirname = path.dirname(fileURLToPath(import.meta.url));
  *
@@ -124,7 +124,7 @@ export type ModelDownloaderOptions = ({
  * ```typescript
  * import {fileURLToPath} from "url";
  * import path from "path";
- * import {createModelDownloader, getLlama} from "node-llama-cpp";
+ * import {createModelDownloader, getLlama} from "llama-cpp-node";
  *
  * const __dirname = path.dirname(fileURLToPath(import.meta.url));
  *
@@ -160,7 +160,7 @@ export function createModelDownloader(options: ModelDownloaderOptions) {
  * ```typescript
  * import {fileURLToPath} from "url";
  * import path from "path";
- * import {createModelDownloader, combineModelDownloaders, getLlama} from "node-llama-cpp";
+ * import {createModelDownloader, combineModelDownloaders, getLlama} from "llama-cpp-node";
  *
  * const __dirname = path.dirname(fileURLToPath(import.meta.url));
  *

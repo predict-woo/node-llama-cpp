@@ -1,9 +1,9 @@
 ---
 outline: deep
-description: Contributing to node-llama-cpp
+description: Contributing to llama-cpp-node
 ---
-# Opening a PR on `node-llama-cpp`
-This document describes the guidelines of how to open a PR on the `node-llama-cpp` project.
+# Opening a PR on `llama-cpp-node`
+This document describes the guidelines of how to open a PR on the `llama-cpp-node` project.
 
 ## Development
 To set up your development environment, read the [development guide](./development.md).

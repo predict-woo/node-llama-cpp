@@ -96,7 +96,7 @@ export type LlamaOptions = {
      *     - Otherwise, build from source and use the resulting binary.
      *
      * When running from inside an Asar archive in Electron, building from source is not possible, so it'll never build from source.
-     * To allow building from source in Electron apps, make sure you ship `node-llama-cpp` as an unpacked module.
+     * To allow building from source in Electron apps, make sure you ship `llama-cpp-node` as an unpacked module.
      *
      * Defaults to `"auto"`.
      * On Electron, defaults to `"never"`.

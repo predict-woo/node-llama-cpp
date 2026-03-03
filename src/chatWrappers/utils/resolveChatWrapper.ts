@@ -157,7 +157,7 @@ export type ResolveChatWrapperWithModelOptions = {
  * unless `fallbackToOtherWrappersOnJinjaError` is set to `false` (in which case, it will throw an error).
  * @example
  * ```typescript
- * import {getLlama, resolveChatWrapper, GeneralChatWrapper} from "node-llama-cpp";
+ * import {getLlama, resolveChatWrapper, GeneralChatWrapper} from "llama-cpp-node";
  *
  * const llama = await getLlama();
  * const model = await llama.loadModel({modelPath: "path/to/model.gguf"});
@@ -172,7 +172,7 @@ export type ResolveChatWrapperWithModelOptions = {
  * ```
  * @example
  *```typescript
- * import {getLlama, resolveChatWrapper, GeneralChatWrapper} from "node-llama-cpp";
+ * import {getLlama, resolveChatWrapper, GeneralChatWrapper} from "llama-cpp-node";
  *
  * const llama = await getLlama();
  * const model = await llama.loadModel({modelPath: "path/to/model.gguf"});

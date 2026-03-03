@@ -127,7 +127,7 @@ const defaultConvertUnsupportedSystemMessagesToUserMessagesFormat: JinjaTemplate
  * <span v-pre>
  *
  * ```ts
- * import {JinjaTemplateChatWrapper} from "node-llama-cpp";
+ * import {JinjaTemplateChatWrapper} from "llama-cpp-node";
  *
  * const chatWrapper = new JinjaTemplateChatWrapper({
  *     template: "<Jinja template here>",

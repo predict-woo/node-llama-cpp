@@ -35,7 +35,7 @@ export type TemplateChatWrapperOptions = {
  * <span v-pre>
  *
  * ```ts
- * import {TemplateChatWrapper} from "node-llama-cpp";
+ * import {TemplateChatWrapper} from "llama-cpp-node";
  *
  * const chatWrapper = new TemplateChatWrapper({
  *     template: "{{systemPrompt}}\n{{history}}model: {{completion}}\nuser: ",

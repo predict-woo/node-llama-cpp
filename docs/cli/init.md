@@ -14,7 +14,7 @@ const commandDoc = docs.init;
 ::: info
 This command is also available via:
 ```shell
-npm create node-llama-cpp@latest [name]
+npm create llama-cpp-node@latest [name]
 ```
 :::
 

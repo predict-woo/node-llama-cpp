@@ -20,8 +20,8 @@ async function unshallowAndSquashCurrentRepoWithoutSubmodulesAndSaveItAsReleaseB
     if (await fs.pathExists(currentReleaseGitBundlePath))
         await fs.remove(currentReleaseGitBundlePath);
 
-    await simpleGit(llamaCppDirectory).addConfig("user.name", "node-llama-cpp-ci");
-    await simpleGit(llamaCppDirectory).addConfig("user.email", "node-llama-cpp-ci@node-llama-cpp-ci.node-llama-cpp-ci");
+    await simpleGit(llamaCppDirectory).addConfig("user.name", "llama-cpp-node-ci");
+    await simpleGit(llamaCppDirectory).addConfig("user.email", "llama-cpp-node-ci@llama-cpp-node-ci.llama-cpp-node-ci");
 
     const currentBranch = await getCurrentTagOrBranch();
 
@@ -77,8 +77,8 @@ async function unshallowAndSquashCurrentRepoWithSubmodulesAndSaveItAsReleaseBund
     await deleteFilesRecursively(llamaCppDirectory, [".git", ".gitmodules"]);
 
     await simpleGit(llamaCppDirectory).init();
-    await simpleGit(llamaCppDirectory).addConfig("user.name", "node-llama-cpp-ci");
-    await simpleGit(llamaCppDirectory).addConfig("user.email", "node-llama-cpp-ci@node-llama-cpp-ci.node-llama-cpp-ci");
+    await simpleGit(llamaCppDirectory).addConfig("user.name", "llama-cpp-node-ci");
+    await simpleGit(llamaCppDirectory).addConfig("user.email", "llama-cpp-node-ci@llama-cpp-node-ci.llama-cpp-node-ci");
 
     await simpleGit(llamaCppDirectory).addRemote("origin", currentRemoteUrl);
 

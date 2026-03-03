@@ -15,7 +15,7 @@ const defaultPredictionMinConfidence = 0.6;
 /**
  * Predicts the next tokens by evaluating the current state of the target sequence
  * on a draft sequence from a smaller and faster draft model.
- * @see [Using Token Predictors: Draft Model Token Predictor](https://node-llama-cpp.withcat.ai/guide/token-prediction#draft-model)
+ * @see [Using Token Predictors: Draft Model Token Predictor](https://llama-cpp-node.withcat.ai/guide/token-prediction#draft-model)
  */
 export class DraftSequenceTokenPredictor extends TokenPredictor {
     /** @internal */ private readonly _draftSequence: LlamaContextSequence;

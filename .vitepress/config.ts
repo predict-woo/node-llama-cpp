@@ -38,11 +38,11 @@ const packageVersion = env.get("DOCS_PACKAGE_VERSION")
     .default(packageJson.version)
     .asString();
 
-const hostname = "https://node-llama-cpp.withcat.ai/";
+const hostname = "https://llama-cpp-node.withcat.ai/";
 const buildDate = new Date();
 
 const socialPosterLink = hostname + "social.poster.jpg";
-const defaultPageTitle = "node-llama-cpp - node.js bindings for llama.cpp";
+const defaultPageTitle = "llama-cpp-node - node.js bindings for llama.cpp";
 const defaultPageDescription = "Run AI models locally on your machine with node.js bindings for llama.cpp";
 
 function resolveHref(href: string, withDomain: boolean = false): string {
@@ -78,7 +78,7 @@ const defaultImageMetaTags: HeadConfig[] = [
 ];
 
 export default defineConfig({
-    title: "node-llama-cpp",
+    title: "llama-cpp-node",
     description: defaultPageDescription,
 
     srcDir: "./docs",
@@ -194,7 +194,7 @@ export default defineConfig({
         ["meta", {name: "theme-color", content: "#dd773e", media: "(prefers-color-scheme: dark)"}],
         ["meta", {property: "og:type", content: "website"}],
         ["meta", {property: "og:locale", content: "en"}],
-        ["meta", {property: "og:site_name", content: "node-llama-cpp"}],
+        ["meta", {property: "og:site_name", content: "llama-cpp-node"}],
         ["script", {async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-Q2SWE5Z1ST"}],
         [
             "script",
@@ -399,11 +399,11 @@ export default defineConfig({
                         ...(await fs.readJSON(path.join(__dirname, "..", "tsconfig.json"))).compilerOptions,
                         moduleResolution: undefined,
                         paths: {
-                            "node-llama-cpp": [
+                            "llama-cpp-node": [
                                 path.resolve(__dirname, "..", "dist", "index.d.ts"),
                                 path.resolve(__dirname, "..", "src", "index.ts")
                             ],
-                            "node-llama-cpp/commands": [
+                            "llama-cpp-node/commands": [
                                 path.resolve(__dirname, "..", "dist", "commands.d.ts"),
                                 path.resolve(__dirname, "..", "src", "commands.ts")
                             ]
@@ -441,7 +441,7 @@ export default defineConfig({
                     link: "https://github.com/orgs/withcatai/projects/1"
                 }, {
                     text: "npm",
-                    link: "https://www.npmjs.com/package/node-llama-cpp"
+                    link: "https://www.npmjs.com/package/llama-cpp-node"
                 }, {
                     text: "GitHub Discussions",
                     link: "https://github.com/withcatai/node-llama-cpp/discussions"
@@ -485,7 +485,7 @@ export default defineConfig({
         },
         sidebar: getVitepressSidebar(),
         socialLinks: [
-            {icon: "npm", link: "https://www.npmjs.com/package/node-llama-cpp"},
+            {icon: "npm", link: "https://www.npmjs.com/package/llama-cpp-node"},
             {icon: "github", link: "https://github.com/withcatai/node-llama-cpp"}
         ]
     },
@@ -637,15 +637,15 @@ export default defineConfig({
             const feedFilePath = path.join(siteConfig.outDir, "blog", "feed.atom");
 
             const feed = new Feed({
-                title: "node-llama-cpp",
+                title: "llama-cpp-node",
                 description: "Run AI models locally on your machine",
                 id: hostname,
                 link: hostname,
                 language: "en",
                 image: socialPosterLink,
                 favicon: resolveHref("/favicon.ico", true),
-                copyright: "node-llama-cpp",
-                generator: "node-llama-cpp",
+                copyright: "llama-cpp-node",
+                generator: "llama-cpp-node",
                 feed: resolveHref("/blog/feed.atom", true),
                 author: {
                     name: typeof packageJson.author === "string"

@@ -508,7 +508,7 @@ const defaultCompleteAsModel = {
 } as const satisfies LLamaChatCompletePromptOptions["completeAsModel"];
 
 /**
- * @see [Using `LlamaChatSession`](https://node-llama-cpp.withcat.ai/guide/chat-session) tutorial
+ * @see [Using `LlamaChatSession`](https://llama-cpp-node.withcat.ai/guide/chat-session) tutorial
  */
 export class LlamaChatSession {
     /** @internal */ private readonly _disposeAggregator = new DisposeAggregator();

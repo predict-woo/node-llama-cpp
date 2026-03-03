@@ -1,5 +1,5 @@
 ---
-description: Generating text completions with node-llama-cpp
+description: Generating text completions with llama-cpp-node
 ---
 # Text Completion {#title}
 To generate text completions, you can use the [`LlamaCompletion`](../api/classes/LlamaCompletion.md) class.
@@ -16,7 +16,7 @@ It's recommended to set [`maxTokens`](../api/type-aliases/LlamaCompletionGenerat
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaCompletion} from "node-llama-cpp";
+import {getLlama, LlamaCompletion} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -47,7 +47,7 @@ Using infill with an unsupported model will throw an [`UnsupportedError`](../api
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaCompletion} from "node-llama-cpp";
+import {getLlama, LlamaCompletion} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -85,7 +85,7 @@ to configure what happens when the given [`signal`](../api/type-aliases/LlamaCom
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaCompletion} from "node-llama-cpp";
+import {getLlama, LlamaCompletion} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

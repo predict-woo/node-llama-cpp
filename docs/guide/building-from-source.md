@@ -1,8 +1,8 @@
 ---
-description: Building llama.cpp from source for node-llama-cpp
+description: Building llama.cpp from source for llama-cpp-node
 ---
 # Building From Source
-`node-llama-cpp` ships with pre-built binaries for macOS, Linux and Windows.
+`llama-cpp-node` ships with pre-built binaries for macOS, Linux and Windows.
 
 In case binaries are not available for your platform or fail to load,
 it'll fallback to download a release of `llama.cpp` and build it from source with `cmake`.
@@ -11,12 +11,12 @@ it'll fallback to download a release of `llama.cpp` and build it from source wit
 To download a release of `llama.cpp` and build it from source you can use the CLI [`source download`](../cli/source/download.md) command.
 
 ```shell
-npx --no node-llama-cpp source download
+npx --no llama-cpp-node source download
 ```
 
 ::: tip NOTE
 
-`node-llama-cpp` ships with a git bundle of the release of `llama.cpp` it was built with,
+`llama-cpp-node` ships with a git bundle of the release of `llama.cpp` it was built with,
 so when you run the [`source download`](../cli/source/download.md) command without specifying a specific release or repo,
 it will use the bundled git bundle instead of downloading the release from GitHub.
 
@@ -25,7 +25,7 @@ This is useful for building from source on machines that aren't connected to the
 :::
 
 ::: info
-If `cmake` is not installed on your machine, `node-llama-cpp` will automatically download `cmake` to an internal directory and try to use it to build `llama.cpp` from source.
+If `cmake` is not installed on your machine, `llama-cpp-node` will automatically download `cmake` to an internal directory and try to use it to build `llama.cpp` from source.
 
 If the build fails, make sure you have the required dependencies of `cmake` installed on your machine. More info is available [here](https://github.com/cmake-js/cmake-js#:~:text=%5Bstring%5D-,Requirements%3A,-CMake) (you don't have to install `cmake` or `cmake-js`, just the dependencies).
 :::
@@ -92,7 +92,7 @@ You can only use the `source build` command after you've already downloaded a re
 
 To only download a release of `llama.cpp` without building it, use the `source download` command with the `--skipBuild` option:
 ```shell
-npx --no node-llama-cpp source download --skipBuild
+npx --no llama-cpp-node source download --skipBuild
 ```
 
 ## Building Inside Your App
@@ -103,7 +103,7 @@ it'll automatically download a release of `llama.cpp` (if it's not already downl
 
 You can pass custom cmake options you want the binary be compiled with by using the [`cmakeOptions`](../api/type-aliases/LlamaOptions.md#cmakeoptions) option:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 // ---cut---
 const llama = await getLlama({
     cmakeOptions: {
@@ -118,7 +118,7 @@ const llama = await getLlama({
 
 You can also force it to build a new binary by setting the [`build`](../api/type-aliases/LlamaOptions.md#build) option to `"forceRebuild"`:
 ```typescript
-import {getLlama} from "node-llama-cpp";
+import {getLlama} from "llama-cpp-node";
 // ---cut---
 const llama = await getLlama({
     build: "forceRebuild"
@@ -133,10 +133,10 @@ see the build process to troubleshoot any issues that may arise.
 You can manually set it to be `"auto"` to allow building from source in Electron.
 
 When running from inside an Asar archive in Electron, building from source is not possible, so it'll never build from source.
-To allow building from source in Electron apps, make sure you ship `node-llama-cpp` as an unpacked module.
+To allow building from source in Electron apps, make sure you ship `llama-cpp-node` as an unpacked module.
 
 If you want to use a build with custom cmake options in your Electron app,
-make sure you build `node-llama-cpp` with your desired cmake options _before_ building your Electron app,
+make sure you build `llama-cpp-node` with your desired cmake options _before_ building your Electron app,
 and make sure you pass the same cmake options to the [`getLlama`](../api/functions/getLlama.md) function in your Electron app so it'll use the binary you built.
 :::
 
@@ -163,28 +163,28 @@ const cmakeOptionsFileUrl = data.cmakeOptionsFileUrl;
 
 :::
 
-To build `node-llama-cpp` with any of these options, set an environment variable of an option prefixed with `NODE_LLAMA_CPP_CMAKE_OPTION_` before running the [`source download`](../cli/source/download.md) or [`source build`](../cli/source/build.md) commands.
+To build `llama-cpp-node` with any of these options, set an environment variable of an option prefixed with `NODE_LLAMA_CPP_CMAKE_OPTION_` before running the [`source download`](../cli/source/download.md) or [`source build`](../cli/source/build.md) commands.
 
 To use that customized build in your code, you can either use `getLlama("lastBuild")` to get the last build that was built,
 or pass the code snippet that is printed after the build finishes.
 
 ## Downloading a Newer Release {#download-new-release}
-Every new release of `node-llama-cpp` ships with the latest release of `llama.cpp` that was available at the time of the release,
-so relying on the latest version of `node-llama-cpp` should be enough for most use cases.
+Every new release of `llama-cpp-node` ships with the latest release of `llama.cpp` that was available at the time of the release,
+so relying on the latest version of `llama-cpp-node` should be enough for most use cases.
 
 However, you may want to download a newer release of `llama.cpp` ([`llama.cpp` releases](https://github.com/ggml-org/llama.cpp/releases))
-and build it from source to get the latest features and bug fixes before a new version of `node-llama-cpp` is released.
+and build it from source to get the latest features and bug fixes before a new version of `llama-cpp-node` is released.
 
 A new release may contain breaking changes, so it won't necessarily work properly or even compile at all, so do this with caution.
 
 You can do this by specifying the `--release` option with the release tag you want to download:
 ```shell
-npx --no node-llama-cpp source download --release "b1350"
+npx --no llama-cpp-node source download --release "b1350"
 ```
 
 > You can find the release tag on the [`llama.cpp` releases page](https://github.com/ggml-org/llama.cpp/releases):
 
 You can also opt to download the latest release available:
 ```shell
-npx --no node-llama-cpp source download --release latest
+npx --no llama-cpp-node source download --release latest
 ```

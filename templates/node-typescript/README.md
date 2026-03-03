@@ -1,8 +1,8 @@
-# Node + TypeScript + `node-llama-cpp`
-This template provides a minimal setup to get Node working with TypeScript and `node-llama-cpp`, and some ESLint rules.
+# Node + TypeScript + `llama-cpp-node`
+This template provides a minimal setup to get Node working with TypeScript and `llama-cpp-node`, and some ESLint rules.
 
 ## Get started
-Install node modules and download the model files used by `node-llama-cpp`:
+Install node modules and download the model files used by `llama-cpp-node`:
 ```bash
 npm install
 ```
@@ -12,4 +12,4 @@ Start the project:
 npm start
 ```
 
-> Generated using `npm create node-llama-cpp@latest` ([learn more](https://node-llama-cpp.withcat.ai/guide/))
+> Generated using `npm create llama-cpp-node@latest` ([learn more](https://llama-cpp-node.withcat.ai/guide/))

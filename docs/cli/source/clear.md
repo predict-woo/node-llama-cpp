@@ -14,10 +14,10 @@ const commandDoc = docs.source.clear;
 ::: details Programmatically calling the `source clear` command in your code
 To programmatically call this command in your code, call the `ClearLlamaCppBuildCommand` function:
 ```typescript
-import {ClearLlamaCppBuildCommand} from "node-llama-cpp/commands";
+import {ClearLlamaCppBuildCommand} from "llama-cpp-node/commands";
 await ClearLlamaCppBuildCommand({type: "all"});
 ```
-> **Note:** The `node-llama-cpp/commands` import is subject to change and is unsupported inside Electron
+> **Note:** The `llama-cpp-node/commands` import is subject to change and is unsupported inside Electron
 
 :::
 

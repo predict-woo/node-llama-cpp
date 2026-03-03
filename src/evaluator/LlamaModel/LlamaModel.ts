@@ -564,7 +564,7 @@ export class LlamaModel {
     }
 
     /**
-     * @see [Using Embedding](https://node-llama-cpp.withcat.ai/guide/embedding) tutorial
+     * @see [Using Embedding](https://llama-cpp-node.withcat.ai/guide/embedding) tutorial
      */
     public async createEmbeddingContext(options: LlamaEmbeddingContextOptions = {}) {
         if (this._vocabOnly)
@@ -574,7 +574,7 @@ export class LlamaModel {
     }
 
     /**
-     * @see [Reranking Documents](https://node-llama-cpp.withcat.ai/guide/embedding#reranking) tutorial
+     * @see [Reranking Documents](https://llama-cpp-node.withcat.ai/guide/embedding#reranking) tutorial
      */
     public async createRankingContext(options: LlamaRankingContextOptions = {}) {
         if (this._vocabOnly)

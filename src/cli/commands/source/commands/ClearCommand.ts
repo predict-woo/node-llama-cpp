@@ -15,7 +15,7 @@ export const ClearCommand: CommandModule<object, ClearCommand> = {
     command: "clear [type]",
     aliases: ["clean"],
     describe: withCliCommandDescriptionDocsUrl(
-        "Clear files created by `node-llama-cpp`",
+        "Clear files created by `llama-cpp-node`",
         documentationPageUrls.CLI.Source.Clear
     ),
     builder(yargs) {

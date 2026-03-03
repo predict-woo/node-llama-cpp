@@ -1,6 +1,6 @@
 <div align="center">
-    <a href="https://node-llama-cpp.withcat.ai" target="_blank"><img alt="node-llama-cpp Logo" src="https://raw.githubusercontent.com/withcatai/node-llama-cpp/master/assets/logo.v3.roundEdges.avif" width="360px" /></a>
-    <h1>node-llama-cpp</h1>
+    <a href="https://llama-cpp-node.withcat.ai" target="_blank"><img alt="llama-cpp-node Logo" src="https://raw.githubusercontent.com/withcatai/node-llama-cpp/master/assets/logo.v3.roundEdges.avif" width="360px" /></a>
+    <h1>llama-cpp-node</h1>
     <p>Run AI models locally on your machine</p>
     <sub>Pre-built bindings are provided with a fallback to building from source with cmake</sub>
     <p></p>
@@ -9,49 +9,49 @@
 <div align="center" class="main-badges">
 
 [![Build](https://github.com/withcatai/node-llama-cpp/actions/workflows/build.yml/badge.svg)](https://github.com/withcatai/node-llama-cpp/actions/workflows/build.yml)
-[![License](https://badgen.net/badge/color/MIT/green?label=license)](https://www.npmjs.com/package/node-llama-cpp)
-[![Types](https://badgen.net/badge/color/TypeScript/blue?label=types)](https://www.npmjs.com/package/node-llama-cpp)
-[![Version](https://badgen.net/npm/v/node-llama-cpp)](https://www.npmjs.com/package/node-llama-cpp)
+[![License](https://badgen.net/badge/color/MIT/green?label=license)](https://www.npmjs.com/package/llama-cpp-node)
+[![Types](https://badgen.net/badge/color/TypeScript/blue?label=types)](https://www.npmjs.com/package/llama-cpp-node)
+[![Version](https://badgen.net/npm/v/llama-cpp-node)](https://www.npmjs.com/package/llama-cpp-node)
 
 </div>
 
-✨ [`gpt-oss` is here!](https://node-llama-cpp.withcat.ai/blog/v3.12-gpt-oss) ✨
+✨ [`gpt-oss` is here!](https://llama-cpp-node.withcat.ai/blog/v3.12-gpt-oss) ✨
 
 ## Features
 * Run LLMs locally on your machine
-* [Metal, CUDA and Vulkan support](https://node-llama-cpp.withcat.ai/guide/#gpu-support)
-* [Pre-built binaries are provided](https://node-llama-cpp.withcat.ai/guide/building-from-source), with a fallback to building from source _**without**_ `node-gyp` or Python
-* [Adapts to your hardware automatically](https://node-llama-cpp.withcat.ai/guide/#gpu-support), no need to configure anything
+* [Metal, CUDA and Vulkan support](https://llama-cpp-node.withcat.ai/guide/#gpu-support)
+* [Pre-built binaries are provided](https://llama-cpp-node.withcat.ai/guide/building-from-source), with a fallback to building from source _**without**_ `node-gyp` or Python
+* [Adapts to your hardware automatically](https://llama-cpp-node.withcat.ai/guide/#gpu-support), no need to configure anything
 * A Complete suite of everything you need to use LLMs in your projects
 * [Use the CLI to chat with a model without writing any code](#try-it-without-installing)
-* Up-to-date with the latest `llama.cpp`. Download and compile the latest release with a [single CLI command](https://node-llama-cpp.withcat.ai/guide/building-from-source#downloading-a-release)
-* Enforce a model to generate output in a parseable format, [like JSON](https://node-llama-cpp.withcat.ai/guide/chat-session#json-response), or even force it to [follow a specific JSON schema](https://node-llama-cpp.withcat.ai/guide/chat-session#response-json-schema)
-* [Provide a model with functions it can call on demand](https://node-llama-cpp.withcat.ai/guide/chat-session#function-calling) to retrieve information or perform actions
-* [Embedding and reranking support](https://node-llama-cpp.withcat.ai/guide/embedding)
-* [Safe against special token injection attacks](https://node-llama-cpp.withcat.ai/guide/llama-text#input-safety-in-node-llama-cpp)
-* Great developer experience with full TypeScript support, and [complete documentation](https://node-llama-cpp.withcat.ai/guide/)
+* Up-to-date with the latest `llama.cpp`. Download and compile the latest release with a [single CLI command](https://llama-cpp-node.withcat.ai/guide/building-from-source#downloading-a-release)
+* Enforce a model to generate output in a parseable format, [like JSON](https://llama-cpp-node.withcat.ai/guide/chat-session#json-response), or even force it to [follow a specific JSON schema](https://llama-cpp-node.withcat.ai/guide/chat-session#response-json-schema)
+* [Provide a model with functions it can call on demand](https://llama-cpp-node.withcat.ai/guide/chat-session#function-calling) to retrieve information or perform actions
+* [Embedding and reranking support](https://llama-cpp-node.withcat.ai/guide/embedding)
+* [Safe against special token injection attacks](https://llama-cpp-node.withcat.ai/guide/llama-text#input-safety-in-llama-cpp-node)
+* Great developer experience with full TypeScript support, and [complete documentation](https://llama-cpp-node.withcat.ai/guide/)
 * Much more
 
-## [Documentation](https://node-llama-cpp.withcat.ai)
-* [Getting started guide](https://node-llama-cpp.withcat.ai/guide/)
-* [API reference](https://node-llama-cpp.withcat.ai/api/functions/getLlama)
-* [CLI help](https://node-llama-cpp.withcat.ai/cli/)
-* [Blog](https://node-llama-cpp.withcat.ai/blog/)
+## [Documentation](https://llama-cpp-node.withcat.ai)
+* [Getting started guide](https://llama-cpp-node.withcat.ai/guide/)
+* [API reference](https://llama-cpp-node.withcat.ai/api/functions/getLlama)
+* [CLI help](https://llama-cpp-node.withcat.ai/cli/)
+* [Blog](https://llama-cpp-node.withcat.ai/blog/)
 * [Changelog](https://github.com/withcatai/node-llama-cpp/releases)
 * [Roadmap](https://github.com/orgs/withcatai/projects/1)
 
 ## Try It Without Installing
-Chat with a model in your terminal using [a single command](https://node-llama-cpp.withcat.ai/cli/chat):
+Chat with a model in your terminal using [a single command](https://llama-cpp-node.withcat.ai/cli/chat):
 ```bash
-npx -y node-llama-cpp chat
+npx -y llama-cpp-node chat
 ```
 
 ## Installation
 ```bash
-npm install node-llama-cpp
+npm install llama-cpp-node
 ```
 
-[This package comes with pre-built binaries](https://node-llama-cpp.withcat.ai/guide/building-from-source) for macOS, Linux and Windows.
+[This package comes with pre-built binaries](https://llama-cpp-node.withcat.ai/guide/building-from-source) for macOS, Linux and Windows.
 
 If binaries are not available for your platform, it'll fallback to download a release of `llama.cpp` and build it from source with `cmake`.
 To disable this behavior, set the environment variable `NODE_LLAMA_CPP_SKIP_DOWNLOAD` to `true`.
@@ -60,7 +60,7 @@ To disable this behavior, set the environment variable `NODE_LLAMA_CPP_SKIP_DOWN
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -88,10 +88,10 @@ const a2 = await session.prompt(q2);
 console.log("AI: " + a2);
 ```
 
-> For more examples, see the [getting started guide](https://node-llama-cpp.withcat.ai/guide/)
+> For more examples, see the [getting started guide](https://llama-cpp-node.withcat.ai/guide/)
 
 ## Contributing
-To contribute to `node-llama-cpp` read the [contribution guide](https://node-llama-cpp.withcat.ai/guide/contributing).
+To contribute to `llama-cpp-node` read the [contribution guide](https://llama-cpp-node.withcat.ai/guide/contributing).
 
 ## Acknowledgements
 * llama.cpp: [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)

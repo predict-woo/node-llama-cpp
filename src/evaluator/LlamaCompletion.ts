@@ -229,7 +229,7 @@ const defaultMinPrefixKeepTokens = (
 ) satisfies LlamaInfillGenerationOptions["minPrefixKeepTokens"];
 
 /**
- * @see [Text Completion](https://node-llama-cpp.withcat.ai/guide/text-completion) tutorial
+ * @see [Text Completion](https://llama-cpp-node.withcat.ai/guide/text-completion) tutorial
  */
 export class LlamaCompletion {
     /** @internal */ private readonly _disposeAggregator = new DisposeAggregator();

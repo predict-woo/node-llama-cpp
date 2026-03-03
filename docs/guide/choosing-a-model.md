@@ -64,7 +64,7 @@ significantly reducing the efficiency and speed of inference.
 ::: tip
 Use the [`inspect gpu`](../cli/inspect/gpu.md) command to check your hardware capabilities:
 ```shell
-npx --no node-llama-cpp inspect gpu
+npx --no llama-cpp-node inspect gpu
 ```
 :::
 
@@ -80,7 +80,7 @@ Here's a rough estimation of the VRAM required for different model sizes:
 ::: tip
 To get a more accurate estimation of how well a model will run on your hardware before downloading it, you can use the [`inspect estimate`](../cli/inspect/estimate.md) command:
 ```shell
-npx --no node-llama-cpp inspect estimate <model-file-url>
+npx --no llama-cpp-node inspect estimate <model-file-url>
 ```
 :::
 
@@ -151,7 +151,7 @@ To find the training context size of a model,
 as well as the largest context size that can be created with that model on your machine,
 you can use the [`inspect estimate`](../cli/inspect/estimate.md) command:
 ```shell
-npx --no node-llama-cpp inspect estimate <model-file-url>
+npx --no llama-cpp-node inspect estimate <model-file-url>
 ```
 :::
 
@@ -176,14 +176,14 @@ The easiest way to test a model's quality is by using the [`chat`](../cli/chat.m
 
 You can download a model and immediately prompt it with a single command by passing a model URL together with a `--prompt` flag:
 ```shell
-npx --no node-llama-cpp chat --prompt 'Hi there' <model-url>
+npx --no llama-cpp-node chat --prompt 'Hi there' <model-url>
 ```
 :::
 
 ## Downloading a Model
 For improved download speeds, you can use the [`pull`](../cli/pull.md) command to download a model:
 ```shell
-npx --no node-llama-cpp pull --dir ./models <model-file-url>
+npx --no llama-cpp-node pull --dir ./models <model-file-url>
 ```
 
 > If the model file URL is of a chunk of a binary-split model (for example, [this model](https://huggingface.co/mradermacher/Meta-Llama-3.1-405B-GGUF/blob/main/Meta-Llama-3.1-405B.Q4_K_S.gguf.part1of5)),

@@ -10,7 +10,7 @@ Here are usage examples of [`LlamaChatSession`](../api/classes/LlamaChatSession.
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -43,7 +43,7 @@ To learn more about chat wrappers, see the [chat wrapper guide](./chat-wrapper).
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, GeneralChatWrapper} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, GeneralChatWrapper} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -77,7 +77,7 @@ You can see all the possible options of the [`prompt`](../api/classes/LlamaChatS
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -109,7 +109,7 @@ You can see all the possible options of the [`prompt`](../api/classes/LlamaChatS
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, Token} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, Token} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -160,7 +160,7 @@ You can see the description of the [`prompt`](../api/classes/LlamaChatSession.md
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -191,7 +191,7 @@ To learn more about grammars, see the [grammar guide](./grammar.md).
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -234,7 +234,7 @@ To learn more about the JSON schema grammar, see the [grammar guide](./grammar.m
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(
     fileURLToPath(import.meta.url)
@@ -294,7 +294,7 @@ To learn more about using function calling, read the [function calling guide](./
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession, defineChatSessionFunction} from "node-llama-cpp";
+import {getLlama, LlamaChatSession, defineChatSessionFunction} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -355,7 +355,7 @@ Here is an example of how to customize the system prompt:
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -392,7 +392,7 @@ console.log("AI: " + a1);
 import {fileURLToPath} from "url";
 import path from "path";
 import fs from "fs/promises";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -422,7 +422,7 @@ await fs.writeFile("chatHistory.json", JSON.stringify(chatHistory), "utf8");// [
 import {fileURLToPath} from "url";
 import path from "path";
 import fs from "fs/promises";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ---cut---
@@ -469,7 +469,7 @@ Use with caution.
 import {fileURLToPath} from "url";
 import path from "path";
 import fs from "fs/promises";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -501,7 +501,7 @@ await Promise.all([// [!code highlight]
 import {fileURLToPath} from "url";
 import path from "path";
 import fs from "fs/promises";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ---cut---
@@ -534,7 +534,7 @@ Prompt without saving the prompt to the chat history.
 import {fileURLToPath} from "url";
 import path from "path";
 import fs from "fs/promises";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -586,7 +586,7 @@ so it's recommended to limit the maximum length of the prompt you preload.
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -658,7 +658,7 @@ Prompting the model while a prompt completion is in progress will automatically 
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -710,7 +710,7 @@ while utilizing existing cache to avoid redundant inference and provide fast com
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -764,7 +764,7 @@ to make the model follow a certain direction in its response.
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -795,7 +795,7 @@ to configure what happens when the given [`signal`](../api/type-aliases/LLamaCha
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -841,7 +841,7 @@ To stream response segments you can use the [`onResponseChunk`](../api/type-alia
 ```typescript
 import {fileURLToPath} from "url";
 import path from "path";
-import {getLlama, LlamaChatSession} from "node-llama-cpp";
+import {getLlama, LlamaChatSession} from "llama-cpp-node";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -908,7 +908,7 @@ You can set a reasoning budget to limit the number of tokens a thinking model ca
 ```typescript
 import {
     getLlama, LlamaChatSession, resolveModelFile, Token
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 
 const modelPath = await resolveModelFile("hf:Qwen/Qwen3-14B-GGUF:Q4_K_M");
 

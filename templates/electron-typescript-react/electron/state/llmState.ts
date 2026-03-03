@@ -2,7 +2,7 @@ import path from "node:path";
 import {
     getLlama, Llama, LlamaChatSession, LlamaChatSessionPromptCompletionEngine, LlamaContext, LlamaContextSequence, LlamaModel,
     isChatModelResponseSegment, type ChatModelSegmentType
-} from "node-llama-cpp";
+} from "llama-cpp-node";
 import {withLock, State} from "lifecycle-utils";
 import packageJson from "../../package.json";
 import {modelFunctions} from "../llm/modelFunctions.js";

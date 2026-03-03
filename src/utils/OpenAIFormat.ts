@@ -27,9 +27,9 @@ export class OpenAIFormat {
     }
 
     /**
-     * Convert `node-llama-cpp`'s chat history to OpenAI format.
+     * Convert `llama-cpp-node`'s chat history to OpenAI format.
      *
-     * Note that this conversion is lossy, as OpenAI's format is more limited than `node-llama-cpp`'s.
+     * Note that this conversion is lossy, as OpenAI's format is more limited than `llama-cpp-node`'s.
      */
     public toOpenAiChat<Functions extends ChatModelFunctions>({
         chatHistory,

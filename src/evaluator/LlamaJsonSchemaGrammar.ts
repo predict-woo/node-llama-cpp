@@ -7,8 +7,8 @@ import {LlamaGrammar} from "./LlamaGrammar.js";
 
 /* eslint-disable @stylistic/max-len */
 /**
- * @see [Using a JSON Schema Grammar](https://node-llama-cpp.withcat.ai/guide/grammar#json-schema) tutorial
- * @see [Reducing Hallucinations When Using JSON Schema Grammar](https://node-llama-cpp.withcat.ai/guide/grammar#reducing-json-schema-hallucinations) tutorial
+ * @see [Using a JSON Schema Grammar](https://llama-cpp-node.withcat.ai/guide/grammar#json-schema) tutorial
+ * @see [Reducing Hallucinations When Using JSON Schema Grammar](https://llama-cpp-node.withcat.ai/guide/grammar#reducing-json-schema-hallucinations) tutorial
  */
 export class LlamaJsonSchemaGrammar<
     const T extends GbnfJsonSchema<Defs>,

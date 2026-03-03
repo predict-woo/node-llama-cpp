@@ -96,7 +96,7 @@ export async function BuildLlamaCppCommand({
     ciMode = false
 }: BuildCommand) {
     if (!(await isLlamaCppRepoCloned())) {
-        console.log(chalk.red('llama.cpp is not downloaded. Please run "node-llama-cpp source download" first'));
+        console.log(chalk.red('llama.cpp is not downloaded. Please run "llama-cpp-node source download" first'));
         process.exit(1);
     }
 
